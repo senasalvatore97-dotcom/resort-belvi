@@ -1,0 +1,41 @@
+name: Optimize Resort Belvi cuisine images
+on:
+  push:
+    paths:
+      - '.github/workflows/optimize-belvi-cuisine.yml'
+      - 'Buffet nuziale nel bosco-2.png'
+      - 'Pasta all’aragosta gourmet in bianco candido-1.png'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install pillow
+      - name: Prepare high quality lightweight website images
+        shell: python
+        run: |
+          from pathlib import Path
+          from PIL import Image, ImageOps
+          images = [
+              ("Buffet nuziale nel bosco-2.png", "assets/belvi-cucina-buffet.webp"),
+              ("Pasta all’aragosta gourmet in bianco candido-1.png", "assets/belvi-cucina-piatto.webp"),
+          ]
+          Path("assets").mkdir(exist_ok=True)
+          for source, dest in images:
+              with Image.open(source) as original:
+                  image=ImageOps.exif_transpose(original).convert("RGB")
+                  image.thumbnail((1800,1600), Image.Resampling.LANCZOS)
+                  image.save(dest, format="WEBP", quality=86, method=6)
+              print(f"{source} -> {dest}: {Path(dest).stat().st_size} bytes")
+      - name: Commit generated WebP assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/belvi-cucina-buffet.webp assets/belvi-cucina-piatto.webp
+          git diff --cached --quiet || (git commit -m "assets: optimize Belvi cuisine photography" && git push)
