@@ -706,6 +706,109 @@
       }
       .enquiry-form-wrap::after{display:none!important}
     }
+
+    /* CUISINE · a warm editorial interlude rooted in family hospitality. */
+    .cuisine-section{
+      padding:clamp(95px,11vw,160px) 0 clamp(105px,12vw,175px);
+      background:#e9e5db;
+      overflow:clip;
+      position:relative;
+    }
+    .cuisine-section::before{
+      content:"CUCINA";position:absolute;top:-.22em;right:-.045em;
+      font:400 clamp(160px,23vw,430px)/1 var(--serif);letter-spacing:-.085em;
+      color:rgba(99,91,72,.045);pointer-events:none;white-space:nowrap
+    }
+    .cuisine-grid{position:relative;display:grid;grid-template-columns:.82fr 1.18fr;align-items:center;gap:clamp(54px,8vw,138px)}
+    .cuisine-copy{position:relative;z-index:2}
+    .cuisine-copy .eyebrow{color:#788471}
+    .cuisine-since{font:italic 24px/1.2 var(--serif);color:#a18b67;margin:28px 0 8px!important}
+    .cuisine-copy h2{font:400 clamp(59px,6.9vw,106px)/.91 var(--serif);letter-spacing:-.055em;margin:17px 0 27px}
+    .cuisine-copy h2 em{font-weight:400}
+    .cuisine-copy p{font-size:13px;line-height:2;color:#687365;max-width:480px;margin:0 0 17px}
+    .cuisine-copy .cuisine-lead{font-size:15px;color:#3e5344;line-height:1.95}
+    .cuisine-copy .simple-link{margin-top:21px}
+    .cuisine-datelabel{display:flex;align-items:baseline;margin-top:55px;padding-top:19px;border-top:1px solid #c5c8b9;color:#91a08b}
+    .cuisine-datelabel span{font:400 54px/.9 var(--serif);letter-spacing:-.045em}
+    .cuisine-datelabel span:nth-child(2){color:#a38a64}
+    .cuisine-datelabel small{margin-left:20px;font-size:9px;text-transform:uppercase;letter-spacing:.17em;color:#7b897c}
+    .cuisine-visuals{position:relative;min-height:650px}
+    .cuisine-visual{position:absolute;margin:0;overflow:hidden;border:7px solid #eeeae2;background:#d6d0bf}
+    .cuisine-visual-main{top:0;left:0;width:82%;height:78%;box-shadow:0 25px 60px rgba(46,58,43,.13)}
+    .cuisine-visual-detail{right:0;bottom:0;width:49%;height:52%;box-shadow:0 22px 50px rgba(45,54,42,.17)}
+    .cuisine-visual img{width:100%;height:100%;object-fit:cover}
+    .cuisine-photo-placeholder{height:100%;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 65% 18%,#d7d7c7,#aeb5a2 59%,#8a9786);color:#f6f1e7}
+    .cuisine-photo-placeholder::before{content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.45)}
+    .cuisine-photo-placeholder::after{content:"";position:absolute;width:150%;height:1px;top:34%;left:-25%;transform:rotate(-28deg);background:rgba(255,255,255,.17)}
+    .cuisine-photo-detail{background:radial-gradient(ellipse at 33% 25%,#c7baa6,#91826e 65%,#706552)}
+    .cuisine-placeholder-symbol{font:italic clamp(130px,16vw,240px)/1 var(--serif);opacity:.23}
+    .cuisine-photo-detail .cuisine-placeholder-symbol{font-size:clamp(60px,7vw,115px)}
+    .cuisine-photo-caption{position:absolute;inset:auto 23px 22px;display:flex;flex-direction:column;gap:3px;text-shadow:0 2px 8px rgba(40,46,34,.3)}
+    .cuisine-photo-caption span{font-size:9px;letter-spacing:.19em;text-transform:uppercase}
+    .cuisine-photo-caption strong{font:italic 29px/1.1 var(--serif);font-weight:400}
+    .cuisine-photo-caption small{font-size:9px;opacity:.81;letter-spacing:.07em}
+    .cuisine-visual-detail .cuisine-photo-caption{left:16px;bottom:15px;right:12px}
+    .cuisine-visual-detail .cuisine-photo-caption strong{font-size:23px}
+
+    /* ANNABELLA · personal, high-touch wedding management. */
+    .annabella-feature{
+      margin-top:clamp(85px,9vw,140px);
+      display:grid;grid-template-columns:.78fr 1.22fr;
+      min-height:470px;
+      background:#20372c;
+      color:#f9f6ee;
+      overflow:hidden
+    }
+    .annabella-portrait{position:relative;min-height:470px;overflow:hidden}
+    .annabella-portrait img{width:100%;height:100%;object-fit:cover;object-position:center 32%}
+    .annabella-photo-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;background:linear-gradient(145deg,#e6e1d1,#c7c9b9 55%,#b4beae);color:#667765}
+    .annabella-photo-placeholder::before{content:"";position:absolute;inset:22px;border:1px solid rgba(255,255,255,.58)}
+    .annabella-photo-placeholder::after{content:"";position:absolute;border:1px solid rgba(84,105,86,.18);border-radius:50%;width:82%;aspect-ratio:1;top:8%;right:-27%}
+    .annabella-monogram{font:italic clamp(130px,16vw,265px)/1 var(--serif);line-height:1;letter-spacing:-.09em;opacity:.6;transform:translateX(-8%)}
+    .annabella-photo-note{position:absolute;bottom:35px;left:37px;font-size:10px;letter-spacing:.13em;text-transform:uppercase;line-height:1.8}
+    .annabella-content{padding:clamp(42px,5.4vw,83px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+    .annabella-content .eyebrow{color:#b6cab2}
+    .annabella-content h3{font:400 clamp(57px,6vw,90px)/.92 var(--serif);letter-spacing:-.052em;margin:21px 0 16px}
+    .annabella-content h3 em{font-weight:400}
+    .annabella-role{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#d1c39f;margin-bottom:24px}
+    .annabella-content p{font-size:13px;line-height:1.95;color:#cbd7cb;max-width:510px;margin:0 0 16px}
+    .annabella-content .simple-link{margin-top:19px}
+    .annabella-signature{font:italic 23px/1.2 var(--serif);color:#c1c9af;margin-top:32px}
+    @media(max-width:1050px){
+      .cuisine-grid{gap:5vw;grid-template-columns:.94fr 1.06fr}
+      .cuisine-visuals{min-height:540px}
+      .cuisine-copy h2{font-size:75px}
+      .annabella-content{padding:42px}
+    }
+    @media(max-width:760px){
+      .navigation{display:none}
+      .mobile-menu{overflow-y:auto;gap:clamp(10px,2vh,18px);padding:32px 22px calc(45px + env(safe-area-inset-bottom))}
+      .mobile-menu a{font-size:clamp(35px,8vw,42px);padding-bottom:11px}
+      .cuisine-section{padding:78px 0 91px}
+      .cuisine-grid{grid-template-columns:1fr;gap:35px}
+      .cuisine-copy h2{font-size:clamp(61px,13vw,85px)}
+      .cuisine-copy p,.cuisine-copy .cuisine-lead{font-size:13px}
+      .cuisine-datelabel{margin-top:33px}
+      .cuisine-visuals{min-height:470px}
+      .cuisine-visual{border-width:5px}
+      .cuisine-visual-main{width:84%;height:76%}
+      .cuisine-visual-detail{width:52%;height:48%}
+      .cuisine-photo-caption{left:14px;bottom:14px;right:14px}
+      .cuisine-photo-caption strong{font-size:24px}
+      .cuisine-visual-detail .cuisine-photo-caption strong{font-size:18px}
+      .annabella-feature{grid-template-columns:1fr;margin-top:75px}
+      .annabella-portrait{min-height:380px}
+      .annabella-content{padding:41px 27px 46px}
+      .annabella-content h3{font-size:clamp(62px,12vw,80px)}
+    }
+    @media(max-width:430px){
+      .cuisine-visuals{min-height:390px}
+      .cuisine-visual-detail{width:57%}
+      .cuisine-photo-caption strong{font-size:21px}
+      .annabella-portrait{min-height:330px}
+      .annabella-photo-note{bottom:27px;left:28px}
+      .annabella-content h3{font-size:63px}
+    }
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"EventVenue","name":"Resort Belvì","description":"Location per matrimoni e ricevimenti esclusivi nel contesto del Parco Nazionale del Vesuvio.","address":{"@type":"PostalAddress","streetAddress":"II Traversa Bosco, 15","addressLocality":"Somma Vesuviana","postalCode":"80049","addressRegion":"NA","addressCountry":"IT"},"telephone":"+39 377 365 0242","sameAs":["https://www.instagram.com/resortbelvi/"]}
@@ -724,6 +827,7 @@
         <a href="#experience">Experience</a>
         <a href="#parco">Il parco</a>
         <a href="#bosco">Il bosco</a>
+        <a href="#cucina">La cucina</a>
         <a href="#allestimenti">Allestimenti</a>
         <a class="nav-cta" href="#richiedi">Richiedi informazioni <svg class="arrow-icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></a>
       </nav>
@@ -733,6 +837,7 @@
       <a href="#experience">Experience</a>
       <a href="#parco">Il parco</a>
       <a href="#bosco">Il bosco</a>
+      <a href="#cucina">La cucina</a>
       <a href="#allestimenti">Allestimenti</a>
       <a href="#richiedi">Richiedi informazioni</a>
     </nav>
@@ -832,10 +937,45 @@
       </div>
     </section>
 
+    <!-- LA CUCINA · Sostituire i due segnaposto visivi con fotografie autentiche.
+         Soggetti consigliati: banchetto allestito e piatto gourmet in primo piano. -->
+    <section class="cuisine-section" id="cucina" aria-labelledby="cuisineTitle">
+      <div class="wrap cuisine-grid">
+        <div class="cuisine-copy" data-reveal>
+          <span class="eyebrow">04 / La cucina</span>
+          <p class="cuisine-since">Una storia di famiglia, dal 1980.</p>
+          <h2 id="cuisineTitle">Il gusto di<br><em>ricordare.</em></h2>
+          <p class="cuisine-lead">Ci sono storie che iniziano a tavola. La nostra nasce nel 1980, da una famiglia di ristoratori che ha fatto dell’ospitalità e della buona cucina una vocazione.</p>
+          <p>Oggi quella tradizione incontra una visione contemporanea del banchetto: piatti curati nella presentazione, sapori capaci di emozionare e un’esperienza gastronomica pensata per accompagnare i momenti più importanti.</p>
+          <p>Per noi, l’alta cucina è anche questo: l’arte di trasformare un ricevimento in un ricordo che rimane.</p>
+          <a href="#richiedi" class="simple-link">Immaginiamo il vostro ricevimento <svg class="arrow-icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></a>
+          <div class="cuisine-datelabel" aria-label="Tradizione familiare nella ristorazione dal 1980"><span>19</span><span>80</span><small>Una tradizione che continua</small></div>
+        </div>
+        <div class="cuisine-visuals" data-reveal>
+          <figure class="cuisine-visual cuisine-visual-main">
+            <div class="cuisine-photo-placeholder" role="img" aria-label="Spazio riservato a una futura fotografia dei banchetti e della cucina di Resort Belvì">
+              <span class="cuisine-placeholder-symbol" aria-hidden="true">B.</span>
+              <div class="cuisine-photo-caption"><span>01 / La mise en place</span><strong>Il piacere di stare insieme.</strong><small>Segnaposto · foto banchetto gourmet</small></div>
+            </div>
+            <!-- FOTO GRANDE: sostituire il div .cuisine-photo-placeholder con
+                 <img src="assets/cucina-banchetto.webp" alt="Banchetto gourmet di Resort Belvì" loading="lazy"> -->
+          </figure>
+          <figure class="cuisine-visual cuisine-visual-detail">
+            <div class="cuisine-photo-placeholder cuisine-photo-detail" role="img" aria-label="Spazio riservato a una futura fotografia ravvicinata di un piatto gourmet">
+              <span class="cuisine-placeholder-symbol" aria-hidden="true">1980</span>
+              <div class="cuisine-photo-caption"><span>02 / Il dettaglio</span><strong>Ogni piatto, un’esperienza.</strong><small>Segnaposto · foto piatto gourmet</small></div>
+            </div>
+            <!-- FOTO DETTAGLIO: sostituire il div .cuisine-photo-placeholder con
+                 <img src="assets/cucina-piatto.webp" alt="Dettaglio di un piatto gourmet di Resort Belvì" loading="lazy"> -->
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <section class="styling-section" id="allestimenti" aria-labelledby="stylingTitle">
       <div class="wrap styling-intro" data-reveal>
         <div>
-          <span class="eyebrow">04 / Allestimenti su misura</span>
+          <span class="eyebrow">05 / Allestimenti su misura</span>
           <h2 id="stylingTitle">Il lusso è<br><em>nei dettagli.</em></h2>
         </div>
         <p>Un evento straordinario non si ripete: si progetta. Ascoltiamo le vostre idee e le traduciamo in armonie di colori, fiori, materiali, luci e mise en place, creando un linguaggio estetico riconoscibile e personale.</p>
@@ -855,6 +995,29 @@
             <p>Dalla prima ispirazione all’ultimo particolare, ogni allestimento è immaginato per rispecchiare la vostra storia.</p>
             <a href="#richiedi" class="simple-link">Progettiamolo insieme <svg class="arrow-icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></a>
           </div>
+        </div>
+      </div>
+
+      <!-- ANNABELLA · Sostituire il segnaposto con una vera foto professionale
+           di Annabella, idealmente in piedi a braccia incrociate, luce morbida e sfondo pulito. -->
+      <div class="wrap annabella-feature" data-reveal>
+        <div class="annabella-portrait">
+          <div class="annabella-photo-placeholder" role="img" aria-label="Segnaposto per il ritratto professionale di Annabella, Wedding Manager di Resort Belvì, in posa con le braccia incrociate">
+            <span class="annabella-monogram" aria-hidden="true">A.</span>
+            <span class="annabella-photo-note">Ritratto professionale<br>Annabella · braccia incrociate</span>
+          </div>
+          <!-- FOTO ANNABELLA: sostituire il div .annabella-photo-placeholder con
+               <img src="assets/annabella-wedding-manager.webp"
+                    alt="Annabella, Wedding Manager del Resort Belvì, ritratta a braccia incrociate" loading="lazy"> -->
+        </div>
+        <div class="annabella-content">
+          <span class="eyebrow">Un volto, un punto di riferimento</span>
+          <h3>Vi presentiamo<br><em>Annabella.</em></h3>
+          <span class="annabella-role">Wedding Manager · Resort Belvì</span>
+          <p>Ogni matrimonio comincia da un incontro, da un desiderio raccontato e da qualcuno capace di ascoltarlo davvero.</p>
+          <p>Annabella sarà il vostro punto di riferimento: pronta ad accogliervi, conoscere la vostra idea di bellezza e accompagnarvi nella definizione dei dettagli e degli allestimenti, perché il vostro giorno prenda la forma che avete sempre immaginato.</p>
+          <a class="simple-link" href="#richiedi">Raccontate il vostro sogno <svg class="arrow-icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></a>
+          <span class="annabella-signature">Con cura, in ogni dettaglio.</span>
         </div>
       </div>
     </section>
