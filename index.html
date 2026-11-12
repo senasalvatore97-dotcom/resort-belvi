@@ -8,10 +8,10 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="it_IT">
   <meta property="og:title" content="Resort Belvì — L'arte di celebrare">
-  <meta property="og:description" content="Nel Parco Nazionale del Vesuvio, un luogo dove ogni evento racconta una storia irripetibile.">
-  <meta property="og:image" content="https://senasalvatore97-dotcom.github.io/resort-belvi/belvi-hero-chandeliers.webp">
+  <meta property="og:description" content="Nel Parco Nazionale del Vesuvio: il parco, il bosco, gli allestimenti su misura e l’esperienza Belvì.">
+  <meta property="og:image" content="https://senasalvatore97-dotcom.github.io/resort-belvi/assets/belvi-editorial-01.webp">
   <title>Resort Belvì | Matrimoni ed eventi esclusivi nel Vesuvio</title>
-  <link rel="preload" as="image" href="belvi-hero-chandeliers.webp">
+  <link rel="preload" as="image" href="assets/belvi-editorial-01.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -60,7 +60,7 @@
     .site-header.menu-open .menu-lines::after{transform:rotate(-90deg)}
     .mobile-menu{display:none}
     .hero{position:relative;min-height:780px;padding:115px 0 72px;display:flex;align-items:center;isolation:isolate;color:#fff;overflow:hidden;background:var(--forest-dark)}
-    .hero-image{position:absolute;inset:0;z-index:-3;background-image:url("belvi-hero-chandeliers.webp");background-size:cover;background-position:center center;filter:brightness(.97) contrast(.91) saturate(.81);transform:scale(1.025)}
+    .hero-image{position:absolute;inset:0;z-index:-3;background-image:url("assets/belvi-editorial-01.webp");background-size:cover;background-position:center center;filter:brightness(.97) contrast(.91) saturate(.81);transform:scale(1.025)}
     .hero-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(14,34,25,.81),rgba(14,34,25,.38) 58%,rgba(14,34,25,.35)),linear-gradient(0deg,rgba(16,29,23,.35),transparent 72%)}
     .hero-shine{position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 50% 0%,rgba(249,235,206,.16),transparent 55%)}
     .hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(380px,.85fr);align-items:center;gap:clamp(30px,5vw,90px)}
@@ -227,6 +227,117 @@
       *,*::before,*::after{animation:none!important;transition:none!important}
       [data-reveal]{opacity:1;transform:none}
     }
+
+    /* Resort Belvì · editorial storytelling */
+    .navigation{gap:clamp(16px,1.65vw,33px)}
+    .navigation>a{font-size:9px;white-space:nowrap}
+    .hero{min-height:700px;padding:110px 0 67px}
+    .hero-image{background-image:url("assets/belvi-editorial-01.webp");background-position:center 48%;filter:brightness(.95) contrast(.94) saturate(.87)}
+    .hero-shade{background:linear-gradient(88deg,rgba(12,33,23,.84),rgba(12,33,23,.33) 63%,rgba(12,33,23,.32)),linear-gradient(0deg,rgba(16,33,23,.36),transparent 65%)}
+    .hero h1{font-size:clamp(85px,10vw,149px)}
+    .hero-grid{grid-template-columns:minmax(0,1.13fr) minmax(375px,.87fr)}
+    .lead-card{position:relative}
+    .lead-card:before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#7c9a79,#bdc9a7)}
+    .lead-grid{row-gap:11px}
+    .story-section{padding:clamp(78px,8.7vw,130px) 0}
+    .story-grid{display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:clamp(45px,7vw,115px)}
+    .story-photo{position:relative;margin:0;min-width:0;overflow:hidden;background:#d6ded3}
+    .story-photo img{width:100%;height:100%;object-fit:cover;filter:brightness(1.035) contrast(.94) saturate(.9);transition:transform .8s cubic-bezier(.22,1,.36,1)}
+    .story-photo:hover img{transform:scale(1.025)}
+    .experience-photo{height:clamp(415px,45vw,620px)}
+    .experience-photo img{object-position:center center}
+    .story-photo figcaption{position:absolute;left:22px;bottom:20px;display:flex;align-items:center;gap:17px;color:#fff;text-shadow:0 1px 7px rgba(0,0,0,.55);font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+    .story-photo figcaption span{border-left:1px solid rgba(255,255,255,.7);padding-left:16px}
+    .story-copy .eyebrow,.styling-intro .eyebrow{color:#738978}
+    .story-copy h2,.styling-intro h2{font:400 clamp(55px,6.6vw,100px)/.93 var(--serif);letter-spacing:-.055em;margin:25px 0 28px}
+    .story-copy h2 em,.styling-intro h2 em,.park-content h2 em,.styling-note h3 em{font-weight:400}
+    .story-copy p{font-size:14px;line-height:2;max-width:470px;margin-bottom:16px;color:#637467}
+    .story-copy .simple-link{margin-top:23px;color:var(--forest)}
+    .park-section{min-height:570px;position:relative;isolation:isolate;display:flex;align-items:center;color:#fff;overflow:hidden}
+    .park-photo{position:absolute;inset:0;z-index:-3;background:#22382b url("assets/belvi-editorial-04.webp") center 52% / cover no-repeat;filter:brightness(.85) saturate(.84)}
+    .park-overlay{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(9,30,19,.81),rgba(9,30,19,.26) 73%),linear-gradient(0deg,rgba(4,21,11,.28),transparent)}
+    .park-content{padding:95px 0;position:relative;z-index:1}
+    .park-content h2{font:400 clamp(59px,7.1vw,103px)/.91 var(--serif);letter-spacing:-.05em;margin:26px 0 25px;max-width:780px}
+    .park-content p{font-size:14px;line-height:2;max-width:510px;color:#e4ece0;margin-bottom:29px}
+    .park-content .simple-link{color:#fff}
+    .park-index{position:absolute;right:4vw;bottom:24px;letter-spacing:.22em;text-transform:uppercase;color:#d6e5d6;font-size:9px;opacity:.8}
+    .forest-section{background:#eaece5}
+    .forest-grid{grid-template-columns:.87fr 1.13fr}
+    .forest-photo{height:clamp(420px,48vw,610px)}
+    .forest-photo img{object-position:center 42%}
+    .styling-section{padding:clamp(85px,9vw,125px) 0 115px;background:var(--ivory)}
+    .styling-intro{display:grid;grid-template-columns:1fr .7fr;gap:60px;align-items:end;margin-bottom:46px}
+    .styling-intro h2{margin-bottom:0}
+    .styling-intro>p{color:#627264;line-height:2;font-size:14px;max-width:520px;margin:0 0 5px}
+    .styling-visuals{display:grid;grid-template-columns:1.36fr .64fr;gap:21px}
+    .styling-main{height:650px;position:relative;margin:0;overflow:hidden;background:#dde3d9}
+    .styling-main img{height:100%;object-fit:cover;filter:saturate(.92) contrast(.95);transition:transform .8s}
+    .styling-main:hover img{transform:scale(1.025)}
+    .styling-main figcaption{position:absolute;left:30px;bottom:28px;font:italic 30px/1 var(--serif);color:white;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+    .styling-aside{min-width:0;display:flex;flex-direction:column;gap:24px}
+    .styling-aside figure{height:300px;overflow:hidden;margin:0;background:#ccd9c8}
+    .styling-aside figure img{height:100%;object-fit:cover}
+    .styling-note{padding:3px 10px 0 4px}
+    .styling-note .eyebrow{color:#78917b}
+    .styling-note h3{font:400 clamp(36px,3.6vw,54px)/.96 var(--serif);letter-spacing:-.04em;margin:15px 0 13px}
+    .styling-note p{font-size:12px;line-height:1.9;color:#6d7b6f;max-width:340px;margin-bottom:24px}
+    .closing{padding:74px 0}
+    .closing h2{font-size:clamp(45px,5.5vw,79px);margin-top:17px}
+    .closing .button{min-width:245px}
+    @media(max-width:1050px){
+      .story-grid{gap:5vw}
+      .styling-main{height:570px}
+      .styling-aside figure{height:240px}
+      .styling-note h3{font-size:39px}
+    }
+    @media(max-width:760px){
+      .hero{min-height:0;padding:110px 0 55px}
+      .hero h1{font-size:clamp(75px,14vw,112px)}
+      .hero-image{background-position:56% center}
+      .hero-grid{grid-template-columns:1fr}
+      .story-section{padding:78px 0}
+      .story-grid,.forest-grid{display:grid;grid-template-columns:1fr;gap:41px}
+      .experience-grid .story-photo{order:1}
+      .experience-grid .story-copy{order:0}
+      .story-photo{height:auto}
+      .experience-photo{height:400px}
+      .forest-photo{height:430px}
+      .story-copy h2{font-size:clamp(58px,12.5vw,88px);margin:20px 0 22px}
+      .story-copy p{font-size:13px}
+      .park-section{min-height:515px}
+      .park-content{padding:77px 0 90px}
+      .park-content h2{font-size:clamp(58px,11.3vw,85px)}
+      .park-content p{font-size:13px;max-width:420px}
+      .park-photo{background-position:57% center}
+      .forest-grid .story-copy{order:0}
+      .forest-grid .story-photo{order:1}
+      .styling-section{padding:77px 0 82px}
+      .styling-intro{display:block;margin-bottom:35px}
+      .styling-intro h2{font-size:clamp(57px,12vw,85px);margin:18px 0 20px}
+      .styling-intro>p{font-size:13px}
+      .styling-visuals{grid-template-columns:1fr;gap:18px}
+      .styling-main{height:420px}
+      .styling-main figcaption{font-size:26px;left:17px;bottom:20px}
+      .styling-aside{display:grid;grid-template-columns:.9fr 1.1fr;gap:16px;align-items:center}
+      .styling-aside figure{height:230px}
+      .styling-note{padding:0}
+      .styling-note h3{font-size:34px}
+      .styling-note p{font-size:11px;line-height:1.7;margin-bottom:10px}
+      .styling-note .eyebrow{font-size:8px}
+      .closing{padding:61px 0}
+      .closing h2{font-size:58px}
+    }
+    @media(max-width:460px){
+      .hero h1{font-size:75px}
+      .experience-photo{height:325px}
+      .forest-photo{height:360px}
+      .styling-main{height:340px}
+      .styling-aside{grid-template-columns:1fr;gap:20px}
+      .styling-aside figure{height:235px}
+      .styling-note h3{font-size:42px}
+      .styling-note p{font-size:12px}
+      .closing h2{font-size:49px}
+    }
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"EventVenue","name":"Resort Belvì","description":"Location per matrimoni e ricevimenti esclusivi nel contesto del Parco Nazionale del Vesuvio.","address":{"@type":"PostalAddress","streetAddress":"II Traversa Bosco, 15","addressLocality":"Somma Vesuviana","postalCode":"80049","addressRegion":"NA","addressCountry":"IT"},"telephone":"+39 377 365 0242","sameAs":["https://www.instagram.com/resortbelvi/"]}
@@ -240,110 +351,136 @@
     <div class="wrap header-content">
       <a class="brand" href="#inizio" aria-label="Resort Belvì, torna all'inizio"><span class="brand-resort">Resort</span><span class="brand-name">BEL<span class="brand-accent">VÌ</span></span></a>
       <nav class="navigation" aria-label="Navigazione principale">
-        <a href="#resort">Il resort</a>
-        <a href="#dettagli">La nostra firma</a><a href="#immagini">Immagini</a>
+        <a href="#experience">Experience</a>
+        <a href="#parco">Il parco</a>
+        <a href="#bosco">Il bosco</a>
+        <a href="#allestimenti">Allestimenti</a>
         <a class="nav-cta" href="#richiedi">Richiedi informazioni <svg class="arrow-icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></a>
       </nav>
       <button class="menu-button" type="button" id="menuButton" aria-label="Apri menu" aria-controls="mobileMenu" aria-expanded="false"><span class="menu-lines"></span></button>
     </div>
     <nav class="mobile-menu" id="mobileMenu" aria-label="Menu mobile">
-      <a href="#resort">Il resort</a>
-      <a href="#dettagli">La nostra firma</a>
-      <a href="#immagini">Immagini</a>
+      <a href="#experience">Experience</a>
+      <a href="#parco">Il parco</a>
+      <a href="#bosco">Il bosco</a>
+      <a href="#allestimenti">Allestimenti</a>
       <a href="#richiedi">Richiedi informazioni</a>
     </nav>
   </header>
 
   <main>
     <section class="hero" id="inizio">
-      <div class="hero-image" role="img" aria-label="La piscina e gli spazi esterni del Resort Belvì"></div>
+      <div class="hero-image" role="img" aria-label="Un ricevimento nel giardino di Resort Belvì con lampadari sospesi, fiori e tavolo imperiale"></div>
       <div class="hero-shade"></div><div class="hero-shine"></div>
       <div class="wrap hero-grid">
         <div class="hero-story">
           <span class="eyebrow">Matrimoni ed eventi esclusivi · Vesuvio</span>
-          <h1>Momenti<br><em>senza eguali.</em></h1>
-          <p class="hero-description">Nel Parco Nazionale del Vesuvio, un luogo riservato in cui ogni celebrazione diventa espressione autentica della vostra storia.</p>
-          <a href="#resort" class="hero-hint">Scoprite Resort Belvì</a>
+          <h1>L’arte di<br><em>celebrare.</em></h1>
+          <p class="hero-description">Nel cuore del Parco Nazionale del Vesuvio, un luogo dove natura, bellezza e desideri personali danno forma a celebrazioni irripetibili.</p>
+          <a href="#experience" class="hero-hint">Scoprite l’esperienza Belvì</a>
         </div>
 
         <form class="lead-card" id="richiedi">
           <span class="eyebrow">Una visita privata</span>
-          <h2>Il vostro evento<br><em>inizia qui.</em></h2>
-          <p class="intro">Raccontateci ciò che immaginate. Vi accompagneremo alla scoperta delle possibilità di Resort Belvì.</p>
+          <h2>Il vostro evento<br><em>comincia qui.</em></h2>
+          <p class="intro">Immaginate la vostra giornata. Raccontatecela, e iniziamo a darle forma insieme.</p>
           <div class="lead-grid">
             <div class="field"><label for="nome">Nome e cognome *</label><input id="nome" name="nome" type="text" autocomplete="name" placeholder="Il vostro nome" required maxlength="100"></div>
             <div class="field"><label for="telefono">Telefono *</label><input id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="+39 ..." required maxlength="40"></div>
             <div class="field"><label for="tipologia">Tipo di evento *</label><select id="tipologia" name="tipologia" required><option value="" disabled selected>Seleziona</option><option value="Matrimonio">Matrimonio</option><option value="Cerimonia">Cerimonia</option><option value="Evento privato">Evento privato</option><option value="Evento aziendale">Evento aziendale</option><option value="Altro evento">Altro evento</option></select></div>
             <div class="field"><label for="data">Data desiderata</label><input id="data" name="data" type="date"></div>
             <div class="field"><label for="ospiti">Numero ospiti</label><select id="ospiti" name="ospiti"><option value="">Da definire</option><option>Fino a 60</option><option>60 – 100</option><option>100 – 150</option><option>150 – 180</option><option>Più di 180 (da verificare)</option></select></div>
-            <div class="field"><label for="budget">Budget indicativo (facoltativo)</label><select id="budget" name="budget"><option value="">Preferisco parlarne</option><option>Fino a 10.000 €</option><option>10.000 – 20.000 €</option><option>20.000 – 35.000 €</option><option>Oltre 35.000 €</option></select></div>
             <div class="field full"><label for="messaggio">Desideri particolari</label><textarea id="messaggio" name="messaggio" placeholder="Un dettaglio, un'idea, un'atmosfera..." maxlength="1000"></textarea></div>
           </div>
           <label class="consent"><input type="checkbox" id="consenso" required><span>Acconsento a condividere i dati inseriti con Resort Belvì tramite WhatsApp, dopo aver verificato personalmente il messaggio. I dati non vengono salvati dal sito.</span></label>
           <div class="submit"><button class="button" type="submit">Richiedi informazioni <svg class="arrow-icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></button></div>
-          <span class="form-note">Si aprirà WhatsApp con un messaggio precompilato, pronto per la tua conferma.</span>
+          <span class="form-note">Si aprirà WhatsApp con un messaggio da verificare prima dell’invio.</span>
         </form>
       </div>
     </section>
 
-    <section class="intro-section" id="resort">
-      <div class="wrap intro-grid">
-        <div class="intro-photo" data-reveal>
-          <img src="belvi-chandeliers-detail.webp" alt="Lampadari di cristallo e un lungo tavolo allestito nel giardino del Resort Belvì" loading="lazy">
-        </div>
-        <div class="intro-copy" data-reveal>
-          <span class="eyebrow">Un luogo fuori dall'ordinario</span>
-          <h2>La natura.<br><em>L'eleganza.<br>La vostra storia.</em></h2>
-          <p>Immerso nel paesaggio del Parco Nazionale del Vesuvio, Resort Belvì custodisce un equilibrio raro tra natura, architettura contemporanea e ospitalità d’eccellenza.</p>
-          <p>Giardini, acqua e ambienti luminosi diventano la cornice di celebrazioni disegnate intorno a chi le vive, lontano da ogni formula predefinita.</p>
-          <a class="simple-link" href="#richiedi">Prenotate una visita privata <svg class="arrow-icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></a>
-          <div class="signature">L'arte di celebrare.</div>
+
+    <section class="story-section experience-section" id="experience" aria-labelledby="experienceTitle">
+      <div class="wrap story-grid experience-grid">
+        <figure class="story-photo experience-photo" data-reveal>
+          <img src="assets/belvi-editorial-05.webp" alt="Sposi che danzano al tramonto sulla scenografica pista a scacchi, con il ricevimento in giardino" width="1600" height="1024" loading="lazy" decoding="async">
+          <figcaption>01 <span>Un’esperienza da vivere</span></figcaption>
+        </figure>
+        <div class="story-copy" data-reveal>
+          <span class="eyebrow">01 / The Belvì experience</span>
+          <h2 id="experienceTitle">Molto più di<br><em>un evento.</em></h2>
+          <p>È la sensazione di trovarsi esattamente dove si vorrebbe essere. L’emozione di un ingresso, la luce di un tramonto, la gioia di condividere il momento con le persone più care.</p>
+          <p>Al Belvì, ogni celebrazione prende forma intorno a voi: nessuno schema prestabilito, soltanto la libertà di immaginare un giorno autenticamente vostro.</p>
+          <a class="simple-link" href="#richiedi">Raccontateci la vostra idea <svg class="arrow-icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></a>
         </div>
       </div>
     </section>
 
-    <section class="details" id="dettagli">
-      <div class="wrap">
-        <div class="details-header" data-reveal>
-          <div><span class="eyebrow">La firma Belvì</span><h2>Ogni dettaglio<br><em>parla di voi.</em></h2></div>
-          <p>Nessun evento è uguale a un altro. Ogni scelta nasce dall’ascolto, prende forma in un progetto preciso e si rivela nella bellezza dell’insieme.</p>
+    <section class="park-section" id="parco" aria-labelledby="parkTitle">
+      <div class="park-photo" role="img" aria-label="Scorcio del bosco e degli spazi naturali con un allestimento bianco nel parco di Resort Belvì"></div>
+      <div class="park-overlay"></div>
+      <div class="wrap park-content" data-reveal>
+        <span class="eyebrow">02 / Il parco</span>
+        <h2 id="parkTitle">La natura, nella<br><em>sua forma più bella.</em></h2>
+        <p>Nel paesaggio del Parco Nazionale del Vesuvio, il verde non è soltanto uno sfondo: diventa parte dell’esperienza. Alberi, sentieri e scorci silenziosi accompagnano ogni celebrazione con una bellezza spontanea e senza tempo.</p>
+        <a href="#bosco" class="simple-link">Scoprite il bosco <svg class="arrow-icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></a>
+      </div>
+      <span class="park-index" aria-hidden="true">RESORT BELVÌ / IL PARCO</span>
+    </section>
+
+    <section class="story-section forest-section" id="bosco" aria-labelledby="forestTitle">
+      <div class="wrap story-grid forest-grid">
+        <div class="story-copy" data-reveal>
+          <span class="eyebrow">03 / Il bosco</span>
+          <h2 id="forestTitle">Dove il tempo<br><em>si fa intimo.</em></h2>
+          <p>Tra gli alberi, la luce filtra lenta e ogni dettaglio acquista un significato nuovo. È il lato più raccolto del Belvì: un luogo di sguardi, promesse e ricordi che non hanno bisogno di parole.</p>
+          <p>Un’atmosfera naturale, poetica, perfetta per vivere — e custodire — i momenti più personali.</p>
+          <a href="#richiedi" class="simple-link">Immaginate il vostro giorno <svg class="arrow-icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></a>
         </div>
-        <div class="qualities">
-          <article class="quality" data-reveal><span class="number">01 / Visione</span><h3>Ascolto autentico.</h3><p>Desideri, ispirazioni e personalità guidano la realizzazione di un’esperienza davvero vostra.</p></article>
-          <article class="quality" data-reveal><span class="number">02 / Estetica</span><h3>Allestimenti ad hoc.</h3><p>Scenografie, composizioni floreali e mise en place studiate per ogni evento e richiesta.</p></article>
-          <article class="quality" data-reveal><span class="number">03 / Cura</span><h3>Eleganza in ogni gesto.</h3><p>Attenzione ai tempi, agli spazi e a ogni particolare, perché possiate dedicarvi soltanto alle emozioni.</p></article>
+        <figure class="story-photo forest-photo" data-reveal>
+          <img src="assets/belvi-editorial-03.webp" alt="Coppia di sposi tra gli alberi e la luce calda del bosco, in una scena editoriale romantica" width="1600" height="1024" loading="lazy" decoding="async">
+          <figcaption>03 <span>Il fascino dei momenti riservati</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="styling-section" id="allestimenti" aria-labelledby="stylingTitle">
+      <div class="wrap styling-intro" data-reveal>
+        <div>
+          <span class="eyebrow">04 / Allestimenti su misura</span>
+          <h2 id="stylingTitle">Il lusso è<br><em>nei dettagli.</em></h2>
         </div>
-        <div class="photo-pair" data-reveal>
-          <figure><img src="belvi-table-setting.webp" onerror="this.onerror=null;this.src='https://cdn0.matrimonio.com/vendor/0497/3_2/960/jpg/photo-2021-10-11-14-02-49-2_2_230497-163403900887330.jpeg'" loading="lazy" alt="Mise en place con fiori pastello e cristalli, nel giardino di Resort Belvì"><figcaption>L’arte dell’allestimento</figcaption></figure>
-          <figure><img src="belvi-forest-ceremony.webp" onerror="this.onerror=null;this.src='https://cdn0.matrimonio.com/vendor/0497/3_2/1920/jpg/img-20190918-wa0061_2_230497-1568896932.jpeg'" loading="lazy" alt="Fotografia di una coppia nel bosco di Resort Belvì, nella luce del pomeriggio"><figcaption>La magia del bosco</figcaption></figure>
+        <p>Un evento straordinario non si ripete: si progetta. Ascoltiamo le vostre idee e le traduciamo in armonie di colori, fiori, materiali, luci e mise en place, creando un linguaggio estetico riconoscibile e personale.</p>
+      </div>
+      <div class="wrap styling-visuals" data-reveal>
+        <figure class="styling-main">
+          <img src="assets/belvi-editorial-02.webp" alt="Tavola di ricevimento allestita con fiori delicati, cristalli, ceramiche e luce naturale" width="1600" height="1024" loading="lazy" decoding="async">
+          <figcaption>Una visione, infinite possibilità.</figcaption>
+        </figure>
+        <div class="styling-aside">
+          <figure>
+            <img src="belvi-chandeliers-detail.webp" alt="Lampadari di cristallo sospesi sopra un tavolo imperiale, fra verde e fiori" width="1400" height="933" loading="lazy" decoding="async">
+          </figure>
+          <div class="styling-note">
+            <span class="eyebrow">Ogni scelta racconta</span>
+            <h3>Nulla è lasciato<br><em>al caso.</em></h3>
+            <p>Dalla prima ispirazione all’ultimo particolare, ogni allestimento è immaginato per rispecchiare la vostra storia.</p>
+            <a href="#richiedi" class="simple-link">Progettiamolo insieme <svg class="arrow-icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></a>
+          </div>
         </div>
       </div>
     </section>
 
-
-    <section class="editorial" id="immagini" aria-labelledby="editorialTitle">
-      <div class="wrap">
-        <div class="editorial-head" data-reveal>
-          <div><span class="eyebrow">Il mondo Belvì</span><h2 id="editorialTitle">L'eleganza, <em>da vicino.</em></h2></div>
-          <p>Una selezione di atmosfere e dettagli che raccontano l'arte di celebrare, tra natura e bellezza.</p>
-        </div>
-        <div class="editorial-track" aria-label="Galleria fotografica del Resort Belvì">
-          <figure class="editorial-frame"><img src="assets/belvi-editorial-01.webp" alt="Scena editoriale di matrimonio al Resort Belvì, fotografia 1" width="1600" height="1050" loading="lazy" decoding="async"></figure>
-          <figure class="editorial-frame"><img src="assets/belvi-editorial-02.webp" alt="Scena editoriale di matrimonio al Resort Belvì, fotografia 2" width="1600" height="1050" loading="lazy" decoding="async"></figure>
-          <figure class="editorial-frame"><img src="assets/belvi-editorial-03.webp" alt="Scena editoriale di matrimonio al Resort Belvì, fotografia 3" width="1600" height="1050" loading="lazy" decoding="async"></figure>
-          <figure class="editorial-frame"><img src="assets/belvi-editorial-04.webp" alt="Scena editoriale di matrimonio al Resort Belvì, fotografia 4" width="1600" height="1050" loading="lazy" decoding="async"></figure>
-          <figure class="editorial-frame"><img src="assets/belvi-editorial-05.webp" alt="Scena editoriale di matrimonio al Resort Belvì, fotografia 5" width="1600" height="1050" loading="lazy" decoding="async"></figure>
-        </div>
-        <div class="editorial-footer"><span>Immagini creative rielaborate a partire da fotografie del resort.</span><a href="#richiedi" class="simple-link">Immaginate il vostro evento <svg class="arrow-icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></a></div>
-      </div>
-    </section>
-
-    <section class="closing" aria-label="Prenota una visita">
+    <section class="closing" aria-label="Richiedi una visita privata">
       <div class="wrap closing-grid">
-        <div><span class="eyebrow">Il vostro prossimo ricordo</span><h2>Immaginiamolo <em>insieme.</em></h2></div>
-        <a href="#richiedi" class="button">Richiedi una visita <svg class="arrow-icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></a>
+        <div>
+          <span class="eyebrow">Il vostro giorno, la nostra attenzione</span>
+          <h2>Ogni storia inizia<br><em>da un incontro.</em></h2>
+        </div>
+        <a href="#richiedi" class="button">Richiedi una visita privata <svg class="arrow-icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></a>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
@@ -411,7 +548,6 @@
         ];
         if(date)text.push("Data desiderata: "+date);
         if(val("ospiti"))text.push("Ospiti: "+val("ospiti"));
-        if(val("budget"))text.push("Budget indicativo: "+val("budget"));
         if(val("messaggio"))text.push("Desideri particolari: "+val("messaggio"));
         text.push("","Grazie!");
         var url="https://wa.me/393773650242?text="+encodeURIComponent(text.join("\n"));
