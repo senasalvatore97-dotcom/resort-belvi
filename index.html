@@ -587,6 +587,103 @@
         filter:none!important;transition:none!important;
       }
     }
+
+    /* BELVÌ — paper carried by the wind. Properties are driven by scroll, not time. */
+    .enquiry-section{
+      overflow:visible;
+      z-index:2;
+    }
+    .enquiry-grid{isolation:isolate}
+    .enquiry-intro{position:relative;z-index:1}
+    .enquiry-form-wrap{
+      perspective:1400px;
+      transform-style:preserve-3d;
+      position:relative;
+      z-index:2;
+    }
+    .enquiry-form-wrap::before{
+      content:"";
+      position:absolute;
+      inset:-30px -24px;
+      pointer-events:none;
+      border:1px solid rgba(111,141,109,.12);
+      opacity:var(--paper-halo,0);
+      transform:scale(var(--paper-halo-scale,.96));
+      transition:opacity .2s linear;
+    }
+    .paper-landing-shadow{
+      position:absolute;
+      bottom:-19px;
+      left:12%;
+      width:76%;
+      height:43px;
+      border-radius:50%;
+      background:rgba(27,43,32,.22);
+      filter:blur(24px);
+      opacity:var(--paper-ground-opacity,0);
+      transform:scale(var(--paper-ground-scale,.62));
+      transform-origin:center;
+      pointer-events:none;
+      z-index:0;
+    }
+    .enquiry-section .lead-card{
+      z-index:1;
+      transform-origin:50% 8%;
+      transform-style:preserve-3d;
+      backface-visibility:hidden;
+      background:
+        linear-gradient(130deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,.12) 31%,transparent 52%),
+        #fcfbf7;
+      border:1px solid rgba(109,134,101,.2);
+      box-shadow:
+        0 var(--paper-shadow-y,28px) var(--paper-shadow-blur,58px)
+        rgba(22,40,29,var(--paper-shadow-opacity,.13)),
+        0 2px 5px rgba(49,61,42,.055);
+      will-change:transform,opacity;
+    }
+    /* Folded corner and restrained moving paper sheen, without obscuring fields. */
+    .enquiry-section .lead-card::after{
+      content:"";
+      position:absolute;
+      top:-1px;right:-1px;
+      width:46px;height:46px;
+      clip-path:polygon(0 0,100% 0,100% 100%);
+      background:linear-gradient(225deg,#edf0e6 0%,#e4eadf 42%,#fff 52%,transparent 53%);
+      filter:drop-shadow(-2px 3px 2px rgba(47,63,43,.11));
+      opacity:.86;
+      pointer-events:none;
+      z-index:1;
+    }
+    .enquiry-section .lead-card::before{
+      height:2px;
+      background:linear-gradient(90deg,#7b977f,#d1be98,#abc0a6);
+      pointer-events:none;
+    }
+    .form-scroll-ready.motion-ready .enquiry-section .lead-card,
+    .form-scroll-ready.motion-ready .enquiry-section .lead-card.form-visible{
+      opacity:var(--paper-opacity,0);
+      transform:translate3d(var(--paper-x,0px),var(--paper-y,-370px),var(--paper-z,0px))
+        rotateX(var(--paper-rx,-7deg))
+        rotateY(var(--paper-ry,4deg))
+        rotateZ(var(--paper-rz,-9deg))
+        scale(var(--paper-scale,.88));
+      filter:blur(var(--paper-blur,2px));
+      transition:none!important;
+      pointer-events:var(--paper-pointer,none);
+    }
+    @media(max-width:760px){
+      .enquiry-form-wrap{perspective:1100px}
+      .enquiry-form-wrap::before{inset:-14px -6px}
+      .enquiry-section .lead-card::after{width:33px;height:33px}
+      .paper-landing-shadow{filter:blur(17px);height:28px;bottom:-13px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .enquiry-form-wrap::before,.paper-landing-shadow{display:none!important}
+      .form-scroll-ready.motion-ready .enquiry-section .lead-card{
+        transform:none!important;opacity:1!important;filter:none!important;
+        pointer-events:auto!important;will-change:auto!important
+      }
+    }
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"EventVenue","name":"Resort Belvì","description":"Location per matrimoni e ricevimenti esclusivi nel contesto del Parco Nazionale del Vesuvio.","address":{"@type":"PostalAddress","streetAddress":"II Traversa Bosco, 15","addressLocality":"Somma Vesuviana","postalCode":"80049","addressRegion":"NA","addressCountry":"IT"},"telephone":"+39 377 365 0242","sameAs":["https://www.instagram.com/resortbelvi/"]}
@@ -644,6 +741,7 @@
           <span class="enquiry-signature">Resort Belvì · Somma Vesuviana</span>
         </div>
         <div class="enquiry-form-wrap">
+          <div class="paper-landing-shadow" aria-hidden="true"></div>
         <form class="lead-card" id="richiedi">
           <span class="eyebrow">Una visita privata</span>
           <h2>Il vostro evento<br><em>comincia qui.</em></h2>
@@ -842,35 +940,99 @@
     }
     root.classList.add("motion-ready");
 
-    /* The form lives below the full-screen hero; falling reveal is tied to actual scroll. */
-    var form = document.getElementById("richiedi");
-    var formWrap = document.querySelector(".enquiry-form-wrap");
-    var hasFormMotion = !!(form && formWrap);
-    var formFocused = false;
-    if(hasFormMotion){
-      form.addEventListener("focusin",function(){formFocused=true;renderForm(1);});
-      form.addEventListener("focusout",function(){
-        if(!form.contains(document.activeElement)){formFocused=false;queueScroll();}
-      });
-    }
-    function renderForm(force){
-      if(!hasFormMotion)return;
-      var box=formWrap.getBoundingClientRect();
+    /* One real scroll position controls the paper's altitude; spring adds restrained wind inertia. */
+    var form=document.getElementById("richiedi");
+    var formWrap=document.querySelector(".enquiry-form-wrap");
+    var paperActive=!!(form&&formWrap);
+    var paper={p:0,v:0,target:0,last:0,frame:0,settled:false,locked:false};
+    function paperClamp(v,min,max){return Math.min(max,Math.max(min,v));}
+    function paperSmooth(t){return t*t*(3-2*t);}
+    function paperTarget(){
+      if(!paperActive)return;
+      var rect=formWrap.getBoundingClientRect();
       var vh=window.innerHeight||800;
-      var raw=Math.max(0,Math.min(1,(vh*.93-box.top)/(vh*.70)));
-      var t=force===1||formFocused?1:raw;
-      var ease=t*t*(3-2*t);
-      var y=-145*(1-ease)-8*Math.sin(Math.PI*t);
-      form.style.setProperty("--form-y",y.toFixed(1)+"px");
-      form.style.setProperty("--form-opacity",Math.max(0,Math.min(1,(t-.07)/.76)).toFixed(3));
-      form.style.setProperty("--form-scale",(0.971+0.029*ease).toFixed(4));
-      form.style.setProperty("--form-rotation",(-1.1*(1-ease)).toFixed(2)+"deg");
-      form.style.setProperty("--form-blur",(4*(1-ease)).toFixed(1)+"px");
-      form.classList.toggle("form-visible",t>.62);
+      /* Start when the contact area approaches the bottom; settle around mid viewport. */
+      var start=vh*1.13;
+      var finish=vh*.36;
+      paper.target=paper.locked?1:paperClamp((start-rect.top)/(start-finish),0,1);
+      schedulePaper();
     }
-    if(hasFormMotion){
-      renderForm();
+    function paintPaper(){
+      if(!paperActive)return;
+      var p=paperClamp(paper.p,0,1);
+      var e=paperSmooth(p);
+      var envelope=Math.sin(Math.PI*p);
+      var mobile=window.innerWidth<760;
+      var span=Math.min(window.innerHeight*(mobile?.54:.73),mobile?320:460);
+      /* Slow drift, then a few smaller pendulum oscillations before the page rests. */
+      var wind=(Math.sin(p*Math.PI*3.35+.42)*.78+Math.sin(p*Math.PI*6.6+.9)*.22)*envelope;
+      var smallerWind=Math.sin(p*Math.PI*8.7+.4)*envelope;
+      var inertia=paperClamp(paper.v*110,-1,1);
+      var x=wind*(mobile?31:74)+smallerWind*(mobile?8:17)+inertia*11*envelope;
+      var y=-span*(1-e)-Math.sin(p*Math.PI*3.65)*envelope*(mobile?14:22);
+      var rz=(-9*(1-p)+wind*9.7+inertia*4.2*envelope)*(mobile?.74:1);
+      var rx=8*(1-p)*Math.cos(p*Math.PI*3.2);
+      var ry=(6*(1-p)+wind*-10+smallerWind*2.4)*(mobile?.77:1);
+      var scale=.89+.11*e;
+      var visibility=paperClamp((p-.045)/.42,0,1);
+      var opacity=visibility*visibility*(3-2*visibility);
+      var blur=(1-e)*2.1;
+      var shadow=paperClamp(e,0,1);
+      form.style.setProperty("--paper-x",x.toFixed(2)+"px");
+      form.style.setProperty("--paper-y",y.toFixed(2)+"px");
+      form.style.setProperty("--paper-z",(25*(1-e)).toFixed(2)+"px");
+      form.style.setProperty("--paper-rx",rx.toFixed(2)+"deg");
+      form.style.setProperty("--paper-ry",ry.toFixed(2)+"deg");
+      form.style.setProperty("--paper-rz",rz.toFixed(2)+"deg");
+      form.style.setProperty("--paper-scale",scale.toFixed(4));
+      form.style.setProperty("--paper-opacity",opacity.toFixed(4));
+      form.style.setProperty("--paper-blur",blur.toFixed(2)+"px");
+      form.style.setProperty("--paper-pointer",p>.91?"auto":"none");
+      form.style.setProperty("--paper-shadow-y",(12+e*20).toFixed(1)+"px");
+      form.style.setProperty("--paper-shadow-blur",(30+e*48).toFixed(1)+"px");
+      form.style.setProperty("--paper-shadow-opacity",(.065+e*.115).toFixed(3));
+      formWrap.style.setProperty("--paper-ground-opacity",(shadow*.43).toFixed(3));
+      formWrap.style.setProperty("--paper-ground-scale",(.48+e*.52).toFixed(3));
+      formWrap.style.setProperty("--paper-halo",(shadow*.6).toFixed(3));
+      formWrap.style.setProperty("--paper-halo-scale",(.94+shadow*.06).toFixed(3));
+      form.classList.toggle("form-visible",p>.78);
+    }
+    function tickPaper(now){
+      paper.frame=0;
+      if(!paperActive)return;
+      var dt=paper.last?paperClamp((now-paper.last)/16.667,.5,2):1;
+      paper.last=now;
+      var delta=paper.target-paper.p;
+      /* Damped spring. A scroll gesture nudges the paper; it glides briefly to its new altitude. */
+      paper.v+=delta*.105*dt;
+      paper.v*=Math.pow(.74,dt);
+      paper.p=paperClamp(paper.p+paper.v*dt,0,1);
+      if((paper.p===0&&paper.v<0)||(paper.p===1&&paper.v>0))paper.v=0;
+      paintPaper();
+      if(Math.abs(paper.target-paper.p)>.0006||Math.abs(paper.v)>.0006){
+        paper.frame=requestAnimationFrame(tickPaper);
+      }else{
+        paper.p=paper.target;paper.v=0;paper.last=0;paintPaper();
+      }
+    }
+    function schedulePaper(){
+      if(paperActive&&!paper.frame&&!document.hidden){
+        paper.frame=requestAnimationFrame(tickPaper);
+      }
+    }
+    function settlePaper(){
+      if(!paperActive)return;
+      paper.locked=true;
+      paper.target=1;paper.p=1;paper.v=0;
+      paintPaper();
+    }
+    if(paperActive){
+      /* Keyboard focus or touch on a field always flattens the paper for legibility. */
+      form.addEventListener("focusin",settlePaper);
+      form.addEventListener("pointerdown",settlePaper,{passive:true});
+      /* Drawing from scroll state instead of observing the transformed form prevents loops. */
       root.classList.add("form-scroll-ready");
+      paperTarget();paper.p=paper.target;paper.v=0;paintPaper();
     }
 
     /* Stagger copy beneath each editorial heading, once a section becomes visible. */
@@ -898,7 +1060,7 @@
       var vh=window.innerHeight||800;
       var total=Math.max(1,document.documentElement.scrollHeight-vh);
       if(progress)progress.style.transform="scaleX("+clamp(window.scrollY/total,0,1).toFixed(4)+")";
-      renderForm();
+      paperTarget();
       for(var i=0;i<targets.length;i++){
         var t=targets[i],rect=t.parent.getBoundingClientRect();
         if(rect.bottom < -120 || rect.top > vh+120)continue;
@@ -913,6 +1075,7 @@
     }
     window.addEventListener("scroll",queueScroll,{passive:true});
     window.addEventListener("resize",queueScroll,{passive:true});
+    document.addEventListener("visibilitychange",function(){if(!document.hidden)paperTarget();});
     queueScroll();
 
     /* Fine, translucent, slow snow: no external libraries and no pointer capture. */
