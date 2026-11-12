@@ -448,6 +448,145 @@
         opacity:1!important;filter:none!important;transition:none!important
       }
     }
+
+    /* V3: an actual cinematic opening. No form inside the first screen. */
+    .hero{
+      min-height:100svh;
+      min-height:100dvh;
+      padding:125px 0 90px;
+      display:flex;align-items:center;
+      overflow:hidden;
+    }
+    .hero-grid{
+      display:block;
+      position:relative;
+      max-width:100%;
+    }
+    .hero-story{
+      width:min(100%,1060px);
+      padding:0;
+    }
+    .hero h1{font-size:clamp(90px,11.8vw,174px);margin:24px 0 24px}
+    .hero-title-accent{padding-left:clamp(26px,8vw,120px)}
+    .hero .hero-title-accent em{margin-left:0}
+    .hero-description{max-width:470px;font-size:15px;margin-bottom:20px}
+    .hero-hint{margin-top:5px}
+    .hero-bottom-mark{
+      position:absolute;bottom:28px;right:4.5vw;
+      font-size:9px;letter-spacing:.24em;font-weight:600;
+      color:rgba(255,255,255,.8);pointer-events:none;
+    }
+    .hero-shade{
+      background:linear-gradient(90deg,rgba(10,26,18,.77),rgba(13,30,21,.31) 65%,rgba(13,30,21,.1)),
+      linear-gradient(0deg,rgba(13,28,20,.43),transparent 56%);
+    }
+    /* The form is in its own section and keeps its layout space even while floating. */
+    .enquiry-section{
+      position:relative;isolation:isolate;
+      padding:clamp(94px,10vw,154px) 0;
+      background:#eeece5;
+      overflow:clip;
+    }
+    .enquiry-section:before{
+      content:"";position:absolute;inset:0;
+      pointer-events:none;z-index:-1;
+      background:radial-gradient(ellipse at 83% 30%,rgba(255,255,255,.72),transparent 58%);
+    }
+    .enquiry-grid{
+      display:grid;
+      grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+      gap:clamp(45px,7vw,115px);
+      align-items:center;
+    }
+    .enquiry-intro{align-self:center}
+    .enquiry-intro .eyebrow{color:#708879}
+    .enquiry-intro h2{
+      margin:24px 0 30px;
+      font:400 clamp(61px,6.9vw,104px)/.92 var(--serif);
+      letter-spacing:-.055em;
+    }
+    .enquiry-intro p{
+      max-width:435px;font-size:14px;
+      line-height:2;color:#627367;
+    }
+    .enquiry-signature{
+      display:inline-block;margin-top:30px;
+      padding-top:20px;border-top:1px solid #becbbd;
+      font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+      color:#718677;
+    }
+    .enquiry-form-wrap{position:relative;min-width:0}
+    .enquiry-section .lead-card{
+      scroll-margin-top:95px;
+      position:relative;
+      box-shadow:0 27px 70px rgba(24,49,30,.105);
+      border:1px solid rgba(107,133,107,.13);
+      background:#fcfbf7;
+      padding:clamp(28px,3vw,49px);
+      will-change:auto;
+    }
+    .enquiry-section .lead-card h2{font-size:clamp(41px,3.7vw,58px)}
+    /* Scroll-scrub: downward floating reveal, no autonomous initial form animation. */
+    .motion-ready .enquiry-section .lead-card,
+    .motion-ready .enquiry-section .lead-card.form-visible{
+      opacity:1;
+      pointer-events:auto;
+      filter:none;
+      transform:none;
+      transition:none;
+    }
+    .form-scroll-ready.motion-ready .enquiry-section .lead-card,
+    .form-scroll-ready.motion-ready .enquiry-section .lead-card.form-visible{
+      opacity:var(--form-opacity,0);
+      transform:translate3d(0,var(--form-y,-145px),0) rotate(var(--form-rotation,-1deg)) scale(var(--form-scale,.971));
+      filter:blur(var(--form-blur,4px));
+      transition:none;
+      pointer-events:auto;
+    }
+    @media(max-width:1050px){
+      .hero-grid{display:block;grid-template-columns:none}
+      .hero h1{font-size:clamp(81px,11vw,134px)}
+      .enquiry-grid{gap:5vw;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr)}
+      .enquiry-intro h2{font-size:clamp(57px,7vw,85px)}
+    }
+    @media(max-width:760px){
+      .hero{
+        min-height:100svh;
+        min-height:100dvh;
+        display:flex;align-items:center;
+        padding:115px 0 74px;
+      }
+      .hero-story{padding:0}
+      .hero h1{
+        font-size:clamp(64px,14vw,96px);
+        line-height:.89;margin:21px 0 26px;
+      }
+      .hero-title-accent{padding-left:7%}
+      .hero-description{font-size:13px;max-width:360px}
+      .hero-bottom-mark{font-size:8px;bottom:26px;right:20px}
+      .hero-image{background-position:51% center}
+      .enquiry-section{padding:73px 0 80px}
+      .enquiry-grid{grid-template-columns:1fr;gap:42px}
+      .enquiry-intro h2{font-size:clamp(54px,12vw,82px);margin:19px 0 20px}
+      .enquiry-intro p{font-size:13px;max-width:550px}
+      .enquiry-signature{margin-top:17px}
+      .enquiry-section .lead-card{padding:28px 21px}
+      .enquiry-section .lead-card h2{font-size:45px}
+    }
+    @media(max-width:420px){
+      .hero h1{font-size:clamp(58px,14.5vw,74px)}
+      .hero-title-accent{padding-left:5%}
+      .hero-bottom-mark{letter-spacing:.12em}
+      .enquiry-intro h2{font-size:57px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .enquiry-section .lead-card,
+      .motion-ready .enquiry-section .lead-card,
+      .form-scroll-ready.motion-ready .enquiry-section .lead-card{
+        transform:none!important;opacity:1!important;
+        filter:none!important;transition:none!important;
+      }
+    }
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"EventVenue","name":"Resort Belvì","description":"Location per matrimoni e ricevimenti esclusivi nel contesto del Parco Nazionale del Vesuvio.","address":{"@type":"PostalAddress","streetAddress":"II Traversa Bosco, 15","addressLocality":"Somma Vesuviana","postalCode":"80049","addressRegion":"NA","addressCountry":"IT"},"telephone":"+39 377 365 0242","sameAs":["https://www.instagram.com/resortbelvi/"]}
@@ -489,9 +628,22 @@
           <span class="eyebrow">Matrimoni ed eventi esclusivi · Vesuvio</span>
           <h1 aria-label="L’arte di celebrare."><span class="hero-title-line"><span class="hero-title-inner">L’arte di</span></span><span class="hero-title-line hero-title-accent"><em class="hero-title-inner">celebrare.</em></span></h1>
           <p class="hero-description">Nel cuore del Parco Nazionale del Vesuvio, un luogo dove natura, bellezza e desideri personali danno forma a celebrazioni irripetibili.</p>
-          <a href="#experience" class="hero-hint">Scoprite l’esperienza Belvì</a>
+          <a href="#richiedi" class="hero-hint">Scorri per scoprire</a>
         </div>
 
+      </div>
+      <div class="hero-bottom-mark" aria-hidden="true">BELVÌ · THE ART OF CELEBRATION</div>
+    </section>
+
+    <section class="enquiry-section" id="visita" aria-labelledby="visitTitle">
+      <div class="wrap enquiry-grid">
+        <div class="enquiry-intro" data-reveal>
+          <span class="eyebrow">Un incontro riservato</span>
+          <h2 id="visitTitle">Ogni storia<br>inizia <em>da qui.</em></h2>
+          <p>Il vostro giorno merita un luogo all'altezza di ciò che immaginate. Condividete con noi i vostri desideri: ogni dettaglio prende forma da una conversazione.</p>
+          <span class="enquiry-signature">Resort Belvì · Somma Vesuviana</span>
+        </div>
+        <div class="enquiry-form-wrap">
         <form class="lead-card" id="richiedi">
           <span class="eyebrow">Una visita privata</span>
           <h2>Il vostro evento<br><em>comincia qui.</em></h2>
@@ -508,9 +660,9 @@
           <div class="submit"><button class="button" type="submit">Richiedi informazioni <svg class="arrow-icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></button></div>
           <span class="form-note">Si aprirà WhatsApp con un messaggio da verificare prima dell’invio.</span>
         </form>
+        </div>
       </div>
     </section>
-
 
     <section class="story-section experience-section" id="experience" aria-labelledby="experienceTitle">
       <div class="wrap story-grid experience-grid">
@@ -677,24 +829,48 @@
     var progress = document.getElementById("scrollProgress");
     if(reduced){if(canvas)canvas.hidden=true;return;}
     var root = document.documentElement;
+    /* Do not restore a stale scroll position on a fresh visit or reload.
+       Explicit hash links and browser back/forward navigation remain untouched. */
+    var navEntry=performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+    var navType=navEntry && navEntry.type;
+    if(!location.hash && navType!=="back_forward"){
+      if("scrollRestoration" in history)history.scrollRestoration="manual";
+      var oldBehavior=root.style.scrollBehavior;
+      root.style.scrollBehavior="auto";
+      window.scrollTo(0,0);
+      root.style.scrollBehavior=oldBehavior;
+    }
     root.classList.add("motion-ready");
 
-    /* Hero form reveals as it enters the viewport, never blocks form submission. */
+    /* The form lives below the full-screen hero; falling reveal is tied to actual scroll. */
     var form = document.getElementById("richiedi");
-    if(form){
-      if("IntersectionObserver" in window){
-        var revealForm = new IntersectionObserver(function(entries){
-          entries.forEach(function(entry){
-            if(entry.isIntersecting){
-              entry.target.classList.add("form-visible");
-              revealForm.unobserve(entry.target);
-            }
-          });
-        },{threshold:.08,rootMargin:"0px 0px -6% 0px"});
-        revealForm.observe(form);
-      }else{
-        form.classList.add("form-visible");
-      }
+    var formWrap = document.querySelector(".enquiry-form-wrap");
+    var hasFormMotion = !!(form && formWrap);
+    var formFocused = false;
+    if(hasFormMotion){
+      form.addEventListener("focusin",function(){formFocused=true;renderForm(1);});
+      form.addEventListener("focusout",function(){
+        if(!form.contains(document.activeElement)){formFocused=false;queueScroll();}
+      });
+    }
+    function renderForm(force){
+      if(!hasFormMotion)return;
+      var box=formWrap.getBoundingClientRect();
+      var vh=window.innerHeight||800;
+      var raw=Math.max(0,Math.min(1,(vh*.93-box.top)/(vh*.70)));
+      var t=force===1||formFocused?1:raw;
+      var ease=t*t*(3-2*t);
+      var y=-145*(1-ease)-8*Math.sin(Math.PI*t);
+      form.style.setProperty("--form-y",y.toFixed(1)+"px");
+      form.style.setProperty("--form-opacity",Math.max(0,Math.min(1,(t-.07)/.76)).toFixed(3));
+      form.style.setProperty("--form-scale",(0.971+0.029*ease).toFixed(4));
+      form.style.setProperty("--form-rotation",(-1.1*(1-ease)).toFixed(2)+"deg");
+      form.style.setProperty("--form-blur",(4*(1-ease)).toFixed(1)+"px");
+      form.classList.toggle("form-visible",t>.62);
+    }
+    if(hasFormMotion){
+      renderForm();
+      root.classList.add("form-scroll-ready");
     }
 
     /* Stagger copy beneath each editorial heading, once a section becomes visible. */
@@ -722,6 +898,7 @@
       var vh=window.innerHeight||800;
       var total=Math.max(1,document.documentElement.scrollHeight-vh);
       if(progress)progress.style.transform="scaleX("+clamp(window.scrollY/total,0,1).toFixed(4)+")";
+      renderForm();
       for(var i=0;i<targets.length;i++){
         var t=targets[i],rect=t.parent.getBoundingClientRect();
         if(rect.bottom < -120 || rect.top > vh+120)continue;
