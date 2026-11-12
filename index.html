@@ -613,17 +613,18 @@
       background:linear-gradient(126deg,#162b20 0%,#203a2d 65%,#253e32 100%);
       display:flex;align-items:center;
       overflow:hidden;
+      backface-visibility:hidden;
       will-change:transform;
-      box-shadow:0 0 24px rgba(10,24,17,.13);
+      contain:paint;
     }
     .contact-portal-left{
       left:0;justify-content:flex-end;
-      transform:translate3d(var(--portal-left,0%),0,0)
+      transform:translate3d(0,0,0)
     }
     .contact-portal-right{
       right:0;justify-content:flex-start;
       background:linear-gradient(55deg,#1b3427,#213b2e 60%,#162b20);
-      transform:translate3d(var(--portal-right,0%),0,0)
+      transform:translate3d(0,0,0)
     }
     .contact-portal-word{
       display:block;
@@ -639,16 +640,17 @@
     .contact-portal-spine{
       position:absolute;top:14%;bottom:14%;left:50%;
       width:1px;background:rgba(228,206,161,.68);
-      transform:translate3d(-50%,0,0) scaleY(var(--portal-spine-scale,1));
-      opacity:var(--portal-spine-opacity,1);
+      transform:translate3d(-50%,0,0);
+      opacity:1;
       transform-origin:center;
     }
     .contact-cinematic .enquiry-intro{
-      opacity:var(--contact-intro-opacity,0);
-      transform:translate3d(0,var(--contact-intro-y,38px),0);
-      filter:blur(var(--contact-intro-blur,4px));
+      opacity:0;
+      transform:translate3d(0,38px,0);
+      filter:none!important;
       transition:none!important;
       will-change:opacity,transform;
+      backface-visibility:hidden;
     }
     .enquiry-section .lead-card{
       position:relative;
@@ -671,22 +673,19 @@
     }
     .contact-cinematic.motion-ready .enquiry-section .lead-card,
     .contact-cinematic.motion-ready .enquiry-section .lead-card.form-visible{
-      opacity:var(--contact-form-opacity,0);
-      transform:translate3d(0,var(--contact-form-y,85px),0)
-        scale(var(--contact-form-scale,.82));
-      clip-path:inset(var(--contact-mask,20%) round 1px);
-      filter:blur(var(--contact-form-blur,3px));
-      pointer-events:var(--contact-form-pointer,none);
+      opacity:0;
+      transform:translate3d(0,85px,0) scale(.86);
+      clip-path:none!important;
+      filter:none!important;
+      pointer-events:none;
       transition:none!important;
-      will-change:transform,opacity,clip-path;
+      will-change:transform,opacity;
     }
     .enquiry-form-wrap::after{
       content:"";position:absolute;
       inset:-14px;
       pointer-events:none;
-      border:1px solid rgba(172,148,99,.42);
-      opacity:var(--contact-frame-opacity,0);
-      transform:scale(var(--contact-frame-scale,.92));
+      border:1px solid rgba(172,148,99,.20);
       z-index:0;
     }
     .contact-cinematic .enquiry-form-wrap{isolation:isolate}
@@ -967,52 +966,53 @@
     }
     root.classList.add("motion-ready");
 
-    /* CONTACT PORTAL: deterministic scroll-scrubbed cinema, no timers and no scroll hijacking. */
+    /* CONTACT PORTAL: GPU-only transform + opacity; one geometry read per frame. */
     var contactSection=document.querySelector(".enquiry-section");
     var form=document.getElementById("richiedi");
     var formWrap=document.querySelector(".enquiry-form-wrap");
-    var contactEnabled=!!(contactSection&&form&&formWrap);
+    var portal=contactSection&&contactSection.querySelector(".contact-portal");
+    var gateLeft=portal&&portal.querySelector(".contact-portal-left");
+    var gateRight=portal&&portal.querySelector(".contact-portal-right");
+    var gateSpine=portal&&portal.querySelector(".contact-portal-spine");
+    var contactIntro=contactSection&&contactSection.querySelector(".enquiry-intro");
+    var contactEnabled=!!(contactSection&&form&&formWrap&&gateLeft&&gateRight&&contactIntro);
     var contactInteracting=false;
+    var lastContactProgress=-2;
+    var lastContactInteraction=false;
     function contactClamp(v,a,b){return Math.max(a,Math.min(b,v));}
     function contactEase(v){v=contactClamp(v,0,1);return v*v*(3-2*v);}
     function scrubContact(){
       if(!contactEnabled)return;
       var vh=window.innerHeight||800;
-      var top=contactSection.getBoundingClientRect().top;
-      /* The section is still below the hero at load. The experience unfolds during normal scroll. */
-      var progress=contactClamp((vh*.99-top)/(vh*.82),0,1);
-      var gate=contactEase(contactClamp((progress-.06)/.67,0,1));
-      var intro=contactEase(contactClamp((progress-.23)/.59,0,1));
-      var reveal=contactEase(contactClamp((progress-.29)/.58,0,1));
-      /* Opening the form through an anchor or keyboard must always show an accessible final state. */
+      var rect=contactSection.getBoundingClientRect();
+      /* Skip all rendering if the section is well outside the viewport. */
+      var p=rect.top>vh*1.12?0:rect.bottom< -50?1:
+        contactClamp((vh*.99-rect.top)/(vh*.82),0,1);
+      if(Math.abs(p-lastContactProgress)<.002 && contactInteracting===lastContactInteraction)return;
+      lastContactProgress=p;
+      lastContactInteraction=contactInteracting;
+      var gate=contactEase((p-.06)/.67);
+      var intro=contactEase((p-.23)/.59);
+      var reveal=contactEase((p-.29)/.58);
       if(contactInteracting){gate=1;intro=1;reveal=1;}
-      var inset=(24*(1-reveal)).toFixed(2)+"%";
-      contactSection.style.setProperty("--portal-left",(-104*gate).toFixed(2)+"%");
-      contactSection.style.setProperty("--portal-right",(104*gate).toFixed(2)+"%");
-      contactSection.style.setProperty("--portal-spine-scale",(1-.9*gate).toFixed(3));
-      contactSection.style.setProperty("--portal-spine-opacity",(1-gate).toFixed(3));
-      contactSection.style.setProperty("--contact-intro-opacity",intro.toFixed(3));
-      contactSection.style.setProperty("--contact-intro-y",(42*(1-intro)).toFixed(1)+"px");
-      contactSection.style.setProperty("--contact-intro-blur",(4*(1-intro)).toFixed(2)+"px");
-      contactSection.style.setProperty("--contact-form-opacity",contactClamp((reveal-.06)/.7,0,1).toFixed(3));
-      contactSection.style.setProperty("--contact-form-y",(85*(1-reveal)).toFixed(2)+"px");
-      contactSection.style.setProperty("--contact-form-scale",(.82+.18*reveal).toFixed(4));
-      contactSection.style.setProperty("--contact-form-blur",(2.5*(1-reveal)).toFixed(2)+"px");
-      contactSection.style.setProperty("--contact-mask",inset);
-      contactSection.style.setProperty("--contact-form-pointer",reveal>.87?"auto":"none");
-      contactSection.style.setProperty("--contact-frame-opacity",(.5*reveal).toFixed(3));
-      contactSection.style.setProperty("--contact-frame-scale",(.95+.05*reveal).toFixed(4));
-      form.classList.toggle("form-visible",reveal>.98);
+      gateLeft.style.transform="translate3d("+(-103*gate).toFixed(2)+"%,0,0)";
+      gateRight.style.transform="translate3d("+(103*gate).toFixed(2)+"%,0,0)";
+      if(gateSpine)gateSpine.style.opacity=(1-gate).toFixed(3);
+      if(portal)portal.style.visibility=gate>.995?"hidden":"visible";
+      contactIntro.style.opacity=intro.toFixed(3);
+      contactIntro.style.transform="translate3d(0,"+(38*(1-intro)).toFixed(1)+"px,0)";
+      form.style.opacity=contactClamp((reveal-.06)/.70,0,1).toFixed(3);
+      form.style.transform="translate3d(0,"+(74*(1-reveal)).toFixed(1)+"px,0) scale("+
+        (.86+.14*reveal).toFixed(4)+")";
+      form.style.pointerEvents=reveal>.87?"auto":"none";
     }
     if(contactEnabled){
-      /* No special effects when reduced motion is requested (checked above). */
-      contactSection.style.setProperty("--portal-left","0%");
-      contactSection.style.setProperty("--portal-right","0%");
       root.classList.add("contact-cinematic");
       form.addEventListener("focusin",function(){contactInteracting=true;scrubContact();});
       form.addEventListener("pointerdown",function(){contactInteracting=true;scrubContact();},{passive:true});
-      /* Jump to the contact anchor: content is readable immediately, never hidden behind gates. */
-      window.addEventListener("hashchange",function(){if(location.hash==="#richiedi"||location.hash==="#visita"){contactInteracting=true;scrubContact();}});
+      window.addEventListener("hashchange",function(){
+        if(location.hash==="#richiedi"||location.hash==="#visita"){contactInteracting=true;scrubContact();}
+      });
       if(location.hash==="#richiedi"||location.hash==="#visita")contactInteracting=true;
       scrubContact();
     }
@@ -1047,7 +1047,7 @@
         var t=targets[i],rect=t.parent.getBoundingClientRect();
         if(rect.bottom < -120 || rect.top > vh+120)continue;
         var n=clamp((rect.top+rect.height*.5-vh*.5)/(vh*.65+rect.height*.3),-1,1);
-        t.el.style.setProperty("--parallax-y",(n*-t.strength).toFixed(1)+"px");
+        t.el.style.setProperty("--parallax-y",(n*-t.strength*(window.innerWidth<760?.45:1)).toFixed(1)+"px");
       }
     }
     function queueScroll(){
@@ -1080,19 +1080,19 @@
     function resizeSnow(){
       width=window.innerWidth;
       height=window.innerHeight;
-      ratio=Math.min(window.devicePixelRatio||1,1.8);
+      ratio=Math.min(window.devicePixelRatio||1,width<760?1.15:1.5);
       canvas.width=Math.round(width*ratio);
       canvas.height=Math.round(height*ratio);
       canvas.style.width=width+"px";
       canvas.style.height=height+"px";
       ctx.setTransform(ratio,0,0,ratio,0,0);
-      var count=width<600?27:width<1100?38:56;
+      var count=width<600?18:width<1100?28:40;
       flakes=Array.from({length:count},function(){return createFlake(true);});
     }
     function drawSnow(now){
       if(!visible){frame=0;return;}
       frame=requestAnimationFrame(drawSnow);
-      if(now-lastTime<32)return;
+      if(now-lastTime<42)return;
       var dt=Math.min((now-lastTime||32)/16.67,3);
       lastTime=now;
       ctx.clearRect(0,0,width,height);
