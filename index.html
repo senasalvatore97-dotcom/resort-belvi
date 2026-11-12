@@ -809,6 +809,18 @@
       .annabella-photo-note{bottom:27px;left:28px}
       .annabella-content h3{font-size:63px}
     }
+
+    /* Photography replaces the original cuisine placeholders. */
+    .cuisine-visual img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .75s cubic-bezier(.2,.8,.2,1)}
+    .cuisine-visual-main img{object-position:center center}
+    .cuisine-visual-detail img{object-position:48% center}
+    .cuisine-visual:hover img{transform:scale(1.035)}
+    .cuisine-live-caption{position:absolute;left:0;right:0;bottom:0;padding:62px 25px 22px;color:#fff;background:linear-gradient(0deg,rgba(13,31,22,.62),transparent);display:flex;flex-direction:column;gap:4px;pointer-events:none}
+    .cuisine-live-caption span{font-size:9px;font-weight:700;letter-spacing:.19em;text-transform:uppercase}
+    .cuisine-live-caption strong{font:italic 29px/1.06 var(--serif);font-weight:400}
+    .cuisine-visual-detail .cuisine-live-caption{padding:44px 15px 15px}
+    .cuisine-visual-detail .cuisine-live-caption strong{font-size:23px}
+    @media(max-width:760px){.cuisine-live-caption{padding:50px 15px 15px}.cuisine-live-caption strong{font-size:25px}.cuisine-visual-detail .cuisine-live-caption strong{font-size:19px}}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"EventVenue","name":"Resort Belvì","description":"Location per matrimoni e ricevimenti esclusivi nel contesto del Parco Nazionale del Vesuvio.","address":{"@type":"PostalAddress","streetAddress":"II Traversa Bosco, 15","addressLocality":"Somma Vesuviana","postalCode":"80049","addressRegion":"NA","addressCountry":"IT"},"telephone":"+39 377 365 0242","sameAs":["https://www.instagram.com/resortbelvi/"]}
@@ -953,20 +965,12 @@
         </div>
         <div class="cuisine-visuals" data-reveal>
           <figure class="cuisine-visual cuisine-visual-main">
-            <div class="cuisine-photo-placeholder" role="img" aria-label="Spazio riservato a una futura fotografia dei banchetti e della cucina di Resort Belvì">
-              <span class="cuisine-placeholder-symbol" aria-hidden="true">B.</span>
-              <div class="cuisine-photo-caption"><span>01 / La mise en place</span><strong>Il piacere di stare insieme.</strong><small>Segnaposto · foto banchetto gourmet</small></div>
-            </div>
-            <!-- FOTO GRANDE: sostituire il div .cuisine-photo-placeholder con
-                 <img src="assets/cucina-banchetto.webp" alt="Banchetto gourmet di Resort Belvì" loading="lazy"> -->
+            <img src="assets/belvi-cucina-buffet.webp" alt="Buffet nuziale immerso nel verde, con piatti, alzate, fiori e mise en place eleganti: immagine illustrativa" loading="lazy" decoding="async">
+            <figcaption class="cuisine-live-caption"><span>01 / Il banchetto</span><strong>Il piacere di stare insieme.</strong></figcaption>
           </figure>
           <figure class="cuisine-visual cuisine-visual-detail">
-            <div class="cuisine-photo-placeholder cuisine-photo-detail" role="img" aria-label="Spazio riservato a una futura fotografia ravvicinata di un piatto gourmet">
-              <span class="cuisine-placeholder-symbol" aria-hidden="true">1980</span>
-              <div class="cuisine-photo-caption"><span>02 / Il dettaglio</span><strong>Ogni piatto, un’esperienza.</strong><small>Segnaposto · foto piatto gourmet</small></div>
-            </div>
-            <!-- FOTO DETTAGLIO: sostituire il div .cuisine-photo-placeholder con
-                 <img src="assets/cucina-piatto.webp" alt="Dettaglio di un piatto gourmet di Resort Belvì" loading="lazy"> -->
+            <img src="assets/belvi-cucina-piatto.webp" alt="Spaghetti all'astice con pomodorini, impiattati in stile alta cucina: immagine illustrativa" loading="lazy" decoding="async">
+            <figcaption class="cuisine-live-caption"><span>02 / Il dettaglio</span><strong>Ogni piatto, un’esperienza.</strong></figcaption>
           </figure>
         </div>
       </div>
