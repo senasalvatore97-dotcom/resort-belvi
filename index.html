@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#20392e">
-  <meta name="description" content="Resort Belvì, a Somma Vesuviana: un luogo immerso nella natura per matrimoni, cerimonie ed eventi speciali. Scopri gli spazi e richiedi una visita privata.">
+  <meta name="theme-color" content="#1d3328">
+  <meta name="description" content="Resort Belvì. Matrimoni ed eventi d’autore nel Parco Nazionale del Vesuvio. Un luogo esclusivo in cui ogni allestimento nasce dalla vostra visione, con una cura assoluta per i dettagli.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="it_IT">
-  <meta property="og:title" content="Resort Belvì | Il luogo dei momenti indimenticabili">
-  <meta property="og:description" content="Natura, architettura e bellezza. Scopri Resort Belvì a Somma Vesuviana, alle pendici del Vesuvio.">
+  <meta property="og:title" content="Resort Belvì | Matrimoni ed eventi d’autore nel Vesuvio">
+  <meta property="og:description" content="Nel Parco Nazionale del Vesuvio, una location riservata per matrimoni e ricevimenti curati in ogni dettaglio.">
   <meta property="og:image" content="https://cdn0.matrimonio.com/vendor/0497/3_2/1920/jpg/img-3752_2_230497-1562922747.jpeg">
-  <title>Resort Belvì — Eventi, matrimoni e cerimonie a Somma Vesuviana</title>
+  <title>Resort Belvì | Matrimoni di lusso ed eventi esclusivi nel Parco Nazionale del Vesuvio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -247,23 +247,88 @@
       *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition-duration:.01ms!important}
       [data-reveal]{opacity:1;transform:none}
     }
+
+    /* Art direction 2.0 — luxe editorial, quiet confidence, gentle filmic colour grade */
+    :root{--green:#1d3328;--deep:#14271e;--moss:#657868;--ivory:#f8f7f2;--cream:#efeee8;--line:#dbddd3;--text:#26362b;--gold:#af9b75}
+    .brand .brand-name .brand-accent{color:#94ba9b}
+    .nav.scrolled .brand-name .brand-accent,.nav.menu-active .brand-name .brand-accent{color:#486e4e}
+    .footer .brand-name .brand-accent{color:#96b99b}
+    h2{letter-spacing:-.045em}
+    .eyebrow{font-size:9px;letter-spacing:.245em}
+    .hero{isolation:isolate}
+    .hero-photo{filter:brightness(1.09) contrast(.86) saturate(.74) sepia(.09);background-position:center 51%}
+    .hero-shade{background:linear-gradient(91deg,rgba(10,25,18,.67) 0%,rgba(14,34,25,.20) 72%),linear-gradient(0deg,rgba(11,29,20,.78) 0%,rgba(13,34,25,.01) 59%),linear-gradient(150deg,rgba(247,234,203,.12),transparent 52%)}
+    .hero:before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 68% 30%,rgba(255,247,222,.2),transparent 48%);mix-blend-mode:screen}
+    .hero h1{max-width:1100px;letter-spacing:-.065em}
+    .hero-subtitle{max-width:440px}
+    @keyframes heroReveal{from{transform:scale(1.13);filter:brightness(.82) contrast(.8) saturate(.72) sepia(.1)}to{transform:scale(1.05);filter:brightness(1.09) contrast(.86) saturate(.74) sepia(.09)}}
+    .intro-media{isolation:isolate}
+    .intro-media .photo-main,.intro-media .photo-small,.space-card img,.experience-visual img,.gallery-item img{
+      filter:brightness(1.08) contrast(.88) saturate(.78) sepia(.09);transition:transform .8s cubic-bezier(.22,1,.36,1),filter .7s ease
+    }
+    .intro-media:after{content:"";position:absolute;inset:0 15% 11% 0;background:linear-gradient(148deg,rgba(253,239,211,.16),transparent 54%,rgba(48,70,50,.06));pointer-events:none;mix-blend-mode:screen}
+    .space-card:before,.experience-visual:after,.gallery-item:before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(145deg,rgba(250,231,204,.17),transparent 50%,rgba(22,49,34,.09));mix-blend-mode:screen}
+    .space-card:hover img,.gallery-item:hover img{transform:scale(1.035);filter:brightness(1.11) contrast(.91) saturate(.81) sepia(.08)}
+    .experience-visual{isolation:isolate}
+    .gallery-item{isolation:isolate}
+    .gallery-item:after{z-index:1}
+    .space-card:after{z-index:1}
+    .space-card .count{font-size:9px;letter-spacing:.23em}
+    .space-card h3{font-size:49px}
+    .intro-copy>p,.experience-copy p{font-size:14px;line-height:2.05}
+    .btn{letter-spacing:.18em}
+    .intro-copy .signature{color:#8a947b}
+    .atelier{background:#f8f7f2;padding:150px 0 137px}
+    .atelier-heading{display:grid;grid-template-columns:1.45fr .55fr;gap:65px;align-items:end;margin-bottom:75px}
+    .atelier-heading h2{margin:28px 0 0;max-width:960px}
+    .atelier-heading>p{margin-bottom:8px;font-size:13px;line-height:2;color:#657367;max-width:375px}
+    .atelier-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px}
+    .atelier-step{position:relative;padding:30px 0 30px}
+    .atelier-no{font-size:10px;font-weight:700;letter-spacing:.21em;text-transform:uppercase;color:#8b967f}
+    .atelier-rule{display:block;width:100%;height:1px;background:#bfc7ba;margin:22px 0 34px}
+    .atelier-step h3{font:400 clamp(34px,3.2vw,49px)/1.08 var(--serif);margin:0 0 19px;letter-spacing:-.032em}
+    .atelier-step p{font-size:13px;color:#637264;line-height:2;max-width:340px;margin-bottom:0}
+    .atelier-end{margin-top:72px;padding-top:27px;border-top:1px solid #cdd4ca;display:flex;justify-content:space-between;align-items:center;gap:25px}
+    .atelier-end>span{font-size:10px;letter-spacing:.18em;color:#7d8b7f}
+    .event-row:hover{background:#f0f1eb}
+    .gallery{background:#e9ebe5}
+    .contact-form .field input:focus,.contact-form .field select:focus,.contact-form .field textarea:focus{border-color:#c0cebb}
+    .nav.scrolled,.nav.menu-active{background:rgba(248,247,242,.97)}
+    @media(max-width:1000px){.atelier-heading{grid-template-columns:1fr;gap:12px}.atelier-heading>p{max-width:610px}}
+    @media(max-width:760px){
+      .hero h1{font-size:clamp(73px,15vw,120px)}
+      .hero-shade{background:linear-gradient(0deg,rgba(11,29,21,.86) 0%,rgba(11,29,21,.09) 93%),linear-gradient(90deg,rgba(13,31,22,.26),transparent)}
+      .hero:before{background:radial-gradient(ellipse at 75% 35%,rgba(255,242,215,.14),transparent 54%)}
+      .atelier{padding:89px 0 83px}
+      .atelier-heading{display:block;margin-bottom:37px}
+      .atelier-heading h2{font-size:clamp(49px,11vw,78px)}
+      .atelier-heading>p{margin:23px 0 0}
+      .atelier-grid{grid-template-columns:1fr;gap:0}
+      .atelier-step{padding:24px 0}
+      .atelier-rule{margin:14px 0 22px}
+      .atelier-step h3{font-size:38px}
+      .atelier-end{display:block;margin-top:40px}
+      .atelier-end>span{display:block;margin-bottom:25px;line-height:1.8}
+      .space-card h3{font-size:43px}
+    }
+    @media(prefers-reduced-motion:reduce){.hero-photo{filter:brightness(1.09) contrast(.86) saturate(.74) sepia(.09)}}
   </style>
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"EventVenue","name":"Resort Belvì","description":"Location per matrimoni, cerimonie e ricevimenti immersa nel verde a Somma Vesuviana.","address":{"@type":"PostalAddress","streetAddress":"II Traversa Bosco, 15","addressLocality":"Somma Vesuviana","addressRegion":"NA","postalCode":"80049","addressCountry":"IT"},"telephone":"+39 377 365 0242","sameAs":["https://www.instagram.com/resortbelvi/"]}
+    {"@context":"https://schema.org","@type":"EventVenue","name":"Resort Belvì","description":"Location per matrimoni, cerimonie ed eventi esclusivi nel contesto del Parco Nazionale del Vesuvio. Allestimenti personalizzati, cucina dedicata e cura di ogni dettaglio.","address":{"@type":"PostalAddress","streetAddress":"II Traversa Bosco, 15","addressLocality":"Somma Vesuviana","addressRegion":"NA","postalCode":"80049","addressCountry":"IT"},"telephone":"+39 377 365 0242","sameAs":["https://www.instagram.com/resortbelvi/"]}
   </script>
 </head>
 <body>
   <header class="nav" id="siteNav">
     <div class="nav-inner">
       <a class="brand" href="#inizio" aria-label="Resort Belvì, torna all'inizio">
-        <span class="brand-top">Resort</span><span class="brand-name">BELV<i>Ì</i></span>
+        <span class="brand-top">Resort</span><span class="brand-name">BEL<span class="brand-accent">VÌ</span></span>
       </a>
       <nav class="nav-links" aria-label="Navigazione principale">
         <a class="nav-link" href="#filosofia">Il resort</a>
         <a class="nav-link" href="#spazi">Gli spazi</a>
         <a class="nav-link" href="#eventi">Eventi</a>
         <a class="nav-link" href="#gallery">Gallery</a>
-        <a class="nav-cta" href="#contatti">Richiedi informazioni ↗</a>
+        <a class="nav-cta" href="#contatti">Prenota una visita ↗</a>
       </nav>
       <button class="menu-toggle" id="menuToggle" type="button" aria-label="Apri menu" aria-controls="mobileMenu" aria-expanded="false"><span></span></button>
     </div>
@@ -278,19 +343,19 @@
       <div class="hero-shade"></div>
       <div class="hero-side">Somma Vesuviana · Napoli · Italia</div>
       <div class="container hero-content">
-        <span class="eyebrow">A place beyond the ordinary</span>
-        <h1>Momenti<br><em>senza tempo.</em></h1>
+        <span class="eyebrow">Nel Parco Nazionale del Vesuvio</span>
+        <h1>L’arte di<br><em>celebrare.</em></h1>
         <div class="hero-bottom">
           <div>
-            <p class="hero-subtitle">Tra natura e architettura, il luogo in cui le emozioni più belle prendono forma.</p>
+            <p class="hero-subtitle">Nel cuore del Parco Nazionale del Vesuvio, ogni celebrazione diventa un racconto unico, composto attorno a voi.</p>
             <div class="hero-actions">
-              <a class="btn btn-light" href="#spazi">Esplora il resort <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 19 19 5M7 5h12v12"/></svg></a>
-              <a class="btn btn-outline-light" href="#contatti">Organizza il tuo evento</a>
+              <a class="btn btn-light" href="#spazi">Scopri la location <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 19 19 5M7 5h12v12"/></svg></a>
+              <a class="btn btn-outline-light" href="#contatti">Richiedi una visita privata</a>
             </div>
           </div>
         </div>
       </div>
-      <a class="hero-scroll" href="#filosofia">Scorri per scoprire</a>
+      <a class="hero-scroll" href="#filosofia">Scopri il Belvì</a>
     </section>
 
     <section class="intro" id="filosofia">
@@ -300,45 +365,45 @@
           <img class="photo-small" src="https://cdn0.matrimonio.com/vendor/0497/3_2/960/jpg/photo-2021-10-11-14-02-49-2_2_230497-163403900887330.jpeg" alt="Allestimento floreale per una cerimonia nel giardino" loading="lazy">
         </div>
         <div class="intro-copy" data-reveal>
-          <span class="eyebrow">Benvenuti al Belvì</span>
-          <h2>Un mondo a parte,<br><em>tutto da vivere.</em></h2>
-          <p>C'è un luogo, alle pendici del Vesuvio, dove il verde incontra linee contemporanee, l'acqua riflette la luce e ogni dettaglio invita a fermarsi.</p>
-          <p>Resort Belvì nasce per dare spazio alle storie più importanti. Un rifugio elegante e sorprendente, pensato per trasformare ogni celebrazione in un ricordo da custodire.</p>
-          <a class="text-link" href="#eventi">La tua occasione speciale <span aria-hidden="true">↗</span></a>
-          <div class="signature">With love, Belvì</div>
+          <span class="eyebrow">Un indirizzo, infinite possibilità</span>
+          <h2>L’eleganza<br><em>ha un luogo.</em></h2>
+          <p>Nel paesaggio del Parco Nazionale del Vesuvio, il verde diventa architettura, la luce attraversa gli ambienti e l’acqua disegna riflessi inattesi. Resort Belvì è un luogo in cui la natura incontra un’idea di eleganza discreta e contemporanea.</p>
+          <p>Ogni matrimonio, ogni ricevimento, ogni incontro ha una propria identità. Qui prende forma attraverso atmosfere studiate, percorsi armoniosi e dettagli scelti per esprimere, senza compromessi, ciò che vi rende unici.</p>
+          <a class="text-link" href="#atelier">Scopri la nostra filosofia <span aria-hidden="true">↗</span></a>
+          <div class="signature">L’arte di accogliere.</div>
         </div>
       </div>
     </section>
 
     <div class="marquee" aria-hidden="true">
       <div class="container marquee-line">
-        <span>Nature & beauty</span><b>✦</b><span>Exclusive experiences</span><b>✦</b><span>Made to remember</span><b>✦</b><span>Resort Belvì</span>
+        <span>Unicità</span><b>✦</b><span>Arte dell’accoglienza</span><b>✦</b><span>Eleganza su misura</span><b>✦</b><span>Resort Belvì</span>
       </div>
     </div>
 
     <section class="spaces" id="spazi">
       <div class="container">
         <div class="section-head" data-reveal>
-          <div><span class="eyebrow">La bellezza negli spazi</span><h2>Scenari da <em>ricordare.</em></h2></div>
-          <p>Ambienti diversi, un'unica atmosfera. Ogni spazio racconta un modo nuovo di vivere il tuo evento.</p>
+          <div><span class="eyebrow">Il luogo, la sua anima</span><h2>La bellezza prende <em>forma.</em></h2></div>
+          <p>Dalla quiete dei giardini alla luminosità della sala vetrata, ambienti diversi si incontrano in un’armonia ricercata.</p>
         </div>
         <div class="spaces-grid">
           <article class="space-card" data-reveal>
             <img src="https://cdn0.matrimonio.com/vendor/0497/3_2/1920/jpg/img-3752_2_230497-1562922747.jpeg" alt="Piscina e architettura contemporanea del Resort Belvì" loading="lazy">
-            <div class="space-card-content"><span class="count">01 / L'acqua</span><h3>La piscina</h3><p>Il cuore scenografico del resort, tra riflessi, luce e atmosfere indimenticabili.</p></div>
+            <div class="space-card-content"><span class="count">01 / L'acqua</span><h3>La piscina</h3><p>Un suggestivo specchio d’acqua: riflessi, geometrie e luce trasformano ogni momento in una scena da ricordare.</p></div>
           </article>
           <article class="space-card" data-reveal>
             <img src="https://cdn0.matrimonio.com/tour3d/7062/3_2/960/jpg/7062_230497_2023-06-01-17-34-34.jpeg" alt="Giardino, vialetto e padiglioni per eventi" loading="lazy">
-            <div class="space-card-content"><span class="count">02 / La natura</span><h3>Il parco</h3><p>Spazi verdi che diventano scenografia per incontri ed emozioni.</p></div>
+            <div class="space-card-content"><span class="count">02 / La natura</span><h3>Il parco</h3><p>La natura vesuviana fa da cornice a percorsi, incontri e ricevimenti immersi nel verde.</p></div>
           </article>
           <article class="space-card" data-reveal>
             <img src="https://cdn0.matrimonio.com/vendor/0497/3_2/960/jpg/photo-2021-10-11-14-02-49-2_2_230497-163403900887330.jpeg" alt="Allestimento in giardino per una cerimonia" loading="lazy">
-            <div class="space-card-content"><span class="count">03 / Le emozioni</span><h3>Le cerimonie</h3><p>Angoli raccolti e allestimenti su misura per dire sì alla bellezza.</p></div>
+            <div class="space-card-content"><span class="count">03 / Le emozioni</span><h3>Le cerimonie</h3><p>Dal rito agli allestimenti più intimi, ogni atmosfera è pensata per rispecchiare la vostra storia.</p></div>
           </article>
         </div>
         <div class="spaces-note" data-reveal>
-          <p>La struttura comprende anche una sala ricevimenti vetrata, affacciata sugli spazi esterni.</p>
-          <a class="text-link" href="#gallery">Guarda la gallery <span aria-hidden="true">↗</span></a>
+          <p>La sala ricevimenti, avvolta da grandi vetrate, apre lo sguardo sul verde e sullo specchio d’acqua.</p>
+          <a class="text-link" href="#gallery">Esplora la gallery <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
@@ -348,32 +413,48 @@
         <img src="https://cdn0.matrimonio.com/vendor/0497/3_2/1920/jpg/img-20190918-wa0061_2_230497-1568896932.jpeg" alt="Un momento speciale con sposi e giochi di luce sulla piscina" loading="lazy">
       </div>
       <div class="experience-copy" data-reveal>
-        <span class="eyebrow">L'esperienza Belvì</span>
-        <h2 id="experienceTitle">Tutto parla<br><em>di voi.</em></h2>
-        <p>Crediamo che gli eventi più belli siano quelli che somigliano a chi li vive. Per questo ogni progetto inizia dall'ascolto, dai vostri desideri e da tutti quei particolari che fanno la differenza.</p>
+        <span class="eyebrow">La firma Belvì</span>
+        <h2 id="experienceTitle">Ogni dettaglio<br><em>vi somiglia.</em></h2>
+        <p>L’autentico privilegio è vivere un evento che non assomiglia a nessun altro. Dall’idea iniziale alla mise en place, dagli allestimenti floreali alla scelta delle atmosfere, ogni elemento viene studiato con sensibilità, coerenza e precisione.</p>
         <div class="experience-points">
-          <div><b>Unico.</b><span>Un solo evento al giorno per dedicare l'attenzione che merita.</span></div>
-          <div><b>Su misura.</b><span>Allestimenti, organizzazione e proposte gastronomiche personalizzabili.</span></div>
+          <div><b>Riservato.</b><span>Un solo evento al giorno, per dedicarvi il tempo e l’attenzione che meritate.</span></div>
+          <div><b>Su misura.</b><span>Scenografie, regia dell’evento e percorsi gastronomici costruiti attorno ai vostri desideri.</span></div>
         </div>
-        <a class="btn btn-outline-light" href="#contatti">Raccontaci il tuo evento <span aria-hidden="true">↗</span></a>
+        <a class="btn btn-outline-light" href="#contatti">Condividete la vostra visione <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+
+    <section class="atelier" id="atelier" aria-labelledby="atelierTitle">
+      <div class="container">
+        <div class="atelier-heading" data-reveal>
+          <div><span class="eyebrow">La nostra arte, la vostra storia</span><h2 id="atelierTitle">Non esiste un dettaglio<br><em>troppo piccolo.</em></h2></div>
+          <p>Il lusso non è una formula da replicare. È la libertà di immaginare un giorno esattamente come lo desiderate e la certezza di affidarlo a mani capaci di interpretarlo.</p>
+        </div>
+        <div class="atelier-grid">
+          <article class="atelier-step" data-reveal><span class="atelier-no">01 / Ascolto</span><span class="atelier-rule"></span><h3>La vostra visione.</h3><p>Ogni progetto nasce da una conversazione: gusti, ispirazioni, piccoli desideri e grandi emozioni diventano il punto di partenza.</p></article>
+          <article class="atelier-step" data-reveal><span class="atelier-no">02 / Progetto</span><span class="atelier-rule"></span><h3>Un’estetica irripetibile.</h3><p>Colori, composizioni, fiori, mise en place e scenografie vengono armonizzati in un allestimento ideato per la vostra occasione.</p></article>
+          <article class="atelier-step" data-reveal><span class="atelier-no">03 / Regia</span><span class="atelier-rule"></span><h3>La bellezza di esserci.</h3><p>Una presenza attenta accompagna ogni momento, dai tempi del ricevimento alla cura dell’ospitalità, per lasciarvi soltanto il piacere di viverlo.</p></article>
+        </div>
+        <div class="atelier-end" data-reveal><span>PERSONALIZZAZIONE · ELEGANZA · DEDIZIONE</span><a class="text-link" href="#contatti">Progettiamo qualcosa di unico <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>
 
     <section class="events" id="eventi">
       <div class="container">
         <div class="section-head" data-reveal>
-          <div><span class="eyebrow">Le occasioni speciali</span><h2>Ogni storia merita<br><em>il suo scenario.</em></h2></div>
-          <p>Dal giorno delle nozze alle celebrazioni più intime, c'è sempre una ragione per creare qualcosa di straordinario.</p>
+          <div><span class="eyebrow">Occasioni da celebrare</span><h2>Eventi unici.<br><em>Per definizione.</em></h2></div>
+          <p>Dai matrimoni più raffinati alle ricorrenze riservate: ogni occasione viene interpretata con un linguaggio personale.</p>
         </div>
         <div class="event-list">
           <a class="event-row" href="#contatti" data-event="Matrimonio">
-            <span class="num">01</span><h3>Matrimoni</h3><p>Un giorno irripetibile, dal rito al ricevimento, tra natura, emozione ed eleganza.</p><span class="arrow" aria-hidden="true">↗</span>
+            <span class="num">01</span><h3>Matrimoni d’autore</h3><p>Rito, ricevimento e scenografie concepiti come un’unica esperienza, costruita intorno alla vostra storia.</p><span class="arrow" aria-hidden="true">↗</span>
           </a>
           <a class="event-row" href="#contatti" data-event="Cerimonia">
-            <span class="num">02</span><h3>Cerimonie</h3><p>Momenti da condividere con le persone più care, in una cornice speciale.</p><span class="arrow" aria-hidden="true">↗</span>
+            <span class="num">02</span><h3>Cerimonie private</h3><p>Un’ospitalità intima e sofisticata per i momenti che meritano di essere celebrati con grazia.</p><span class="arrow" aria-hidden="true">↗</span>
           </a>
           <a class="event-row" href="#contatti" data-event="Festa privata">
-            <span class="num">03</span><h3>Eventi privati</h3><p>Compleanni, anniversari e ricorrenze da celebrare in modo personale.</p><span class="arrow" aria-hidden="true">↗</span>
+            <span class="num">03</span><h3>Eventi esclusivi</h3><p>Anniversari, feste e occasioni speciali interpretati attraverso atmosfere e allestimenti dedicati.</p><span class="arrow" aria-hidden="true">↗</span>
           </a>
         </div>
       </div>
@@ -382,9 +463,9 @@
     <section class="gallery" id="gallery">
       <div class="container">
         <div class="gallery-head" data-reveal>
-          <span class="eyebrow">A glimpse of Belvì</span>
-          <h2>La magia <em>in immagini.</em></h2>
-          <p>Un racconto per immagini di luoghi, dettagli e momenti che restano.</p>
+          <span class="eyebrow">L’universo Belvì</span>
+          <h2>Il fascino <em>dei dettagli.</em></h2>
+          <p>Un racconto fatto di luce, natura e istanti che diventano memoria.</p>
         </div>
         <div class="gallery-grid">
           <button class="gallery-item" type="button" data-caption="Il cuore del resort" aria-label="Ingrandisci foto della piscina">
@@ -399,12 +480,12 @@
           <button class="gallery-item" type="button" data-caption="Momenti da ricordare" aria-label="Ingrandisci foto di un matrimonio">
             <img src="https://cdn0.matrimonio.com/vendor/0497/3_2/1920/jpg/img-20190918-wa0061_2_230497-1568896932.jpeg" alt="Taglio della torta sullo specchio d'acqua" loading="lazy"><span class="zoom" aria-hidden="true">+</span>
           </button>
-          <button class="gallery-item" type="button" data-caption="La festa continua" aria-label="Ingrandisci foto di una festa serale">
+          <button class="gallery-item" type="button" data-caption="Un momento sospeso" aria-label="Ingrandisci foto di una festa serale">
             <img src="https://cdn0.matrimonio.com/vendor/0497/3_2/1920/jpg/belvi5_2_230497-1561658664.jpeg" alt="Ricevimento serale con fuochi d'artificio" loading="lazy"><span class="zoom" aria-hidden="true">+</span>
           </button>
         </div>
         <div class="gallery-caption">
-          <span>Una selezione di fotografie pubbliche della struttura. Tutti i diritti restano ai rispettivi autori.</span>
+          <span>Immagini della location. La colorazione è stata armonizzata per il sito; le fotografie restano dei rispettivi titolari.</span>
           <a href="https://www.instagram.com/resortbelvi/" target="_blank" rel="noopener noreferrer">Seguici su Instagram ↗</a>
         </div>
       </div>
@@ -413,17 +494,17 @@
     <section class="quote">
       <div class="container" data-reveal>
         <div class="quote-symbol" aria-hidden="true">“</div>
-        <blockquote>Ci sono giorni che passano.<br>E poi ci sono giorni che <em>restano.</em></blockquote>
-        <span class="eyebrow">Resort Belvì · Moments to remember</span>
+        <blockquote>La vera esclusività è riconoscersi<br>in <em>ogni singolo dettaglio.</em></blockquote>
+        <span class="eyebrow">Resort Belvì · La bellezza che vi appartiene</span>
       </div>
     </section>
 
     <section class="contact" id="contatti">
       <div class="container contact-grid">
         <div class="contact-copy" data-reveal>
-          <span class="eyebrow">Il tuo giorno comincia qui</span>
-          <h2>Immaginiamolo<br><em>insieme.</em></h2>
-          <p>Raccontaci cosa desideri. Ti aspettiamo per scoprire gli spazi di Resort Belvì e iniziare a dare forma a un evento tutto tuo.</p>
+          <span class="eyebrow">Un incontro riservato</span>
+          <h2>Il vostro giorno.<br><em>La nostra cura.</em></h2>
+          <p>Ogni progetto comincia con un incontro. Raccontateci ciò che immaginate: saremo lieti di accogliervi a Resort Belvì per una visita privata e ascoltare i vostri desideri.</p>
           <div class="contact-detail">
             <div><small>Chiamaci</small><a href="tel:+393773650242">+39 377 365 0242</a></div>
             <div><small>Scrivici</small><a href="https://wa.me/393773650242" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></div>
@@ -431,20 +512,20 @@
           </div>
         </div>
         <form class="contact-form" id="inquiryForm" data-reveal>
-          <span class="eyebrow">Richiedi informazioni</span>
-          <p>Compila i campi: prepareremo un messaggio WhatsApp con i dettagli della tua richiesta. Nessun invio automatico.</p>
+          <span class="eyebrow">Richiedi una visita privata</span>
+          <p>Condividete alcuni dettagli della vostra occasione. Il messaggio sarà preparato su WhatsApp e potrete confermarne personalmente l’invio.</p>
           <div class="form-grid">
-            <div class="field"><label for="name">Il tuo nome *</label><input id="name" name="name" autocomplete="name" placeholder="Come ti chiami?" required maxlength="100"></div>
-            <div class="field"><label for="phone">Il tuo numero *</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+39 ..." required maxlength="40"></div>
-            <div class="field"><label for="eventType">Tipo di evento *</label><select id="eventType" name="eventType" required><option value="" disabled selected>Seleziona l'occasione</option><option>Matrimonio</option><option>Cerimonia</option><option>Festa privata</option><option>Altro evento</option></select></div>
-            <div class="field"><label for="eventDate">Data indicativa</label><input id="eventDate" name="eventDate" type="date"></div>
-            <div class="field full"><label for="guests">Numero indicativo di invitati</label><select id="guests" name="guests"><option value="">Non ancora definito</option><option>Fino a 60</option><option>60 – 100</option><option>100 – 150</option><option>150 – 180</option><option>Più di 180 (da verificare)</option></select></div>
-            <div class="field full"><label for="message">Il tuo messaggio</label><textarea id="message" name="message" maxlength="900" placeholder="Raccontaci qualche dettaglio del tuo evento..."></textarea></div>
+            <div class="field"><label for="name">Nome e cognome *</label><input id="name" name="name" autocomplete="name" placeholder="Come possiamo chiamarvi?" required maxlength="100"></div>
+            <div class="field"><label for="phone">Recapito telefonico *</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+39 ..." required maxlength="40"></div>
+            <div class="field"><label for="eventType">La vostra occasione *</label><select id="eventType" name="eventType" required><option value="" disabled selected>Selezionate la tipologia</option><option>Matrimonio</option><option>Cerimonia</option><option>Festa privata</option><option>Evento aziendale</option><option>Altro evento</option></select></div>
+            <div class="field"><label for="eventDate">Data desiderata</label><input id="eventDate" name="eventDate" type="date"></div>
+            <div class="field full"><label for="guests">Numero previsto di ospiti</label><select id="guests" name="guests"><option value="">Non ancora definito</option><option>Fino a 60</option><option>60 – 100</option><option>100 – 150</option><option>150 – 180</option><option>Più di 180 (da verificare)</option></select></div>
+            <div class="field full"><label for="message">I vostri desideri</label><textarea id="message" name="message" maxlength="900" placeholder="Atmosfere, ispirazioni, richieste particolari: raccontateci la vostra idea..."></textarea></div>
           </div>
           <label class="privacy"><input type="checkbox" id="consent" required><span>Acconsento a condividere le informazioni inserite con Resort Belvì tramite WhatsApp, dopo aver verificato il messaggio nell'app. I dati non vengono salvati da questo sito.</span></label>
           <div class="form-actions">
-            <button class="btn btn-light" type="submit">Invia richiesta su WhatsApp <span aria-hidden="true">↗</span></button>
-            <span class="form-note">Si aprirà WhatsApp con un testo precompilato. Dovrai confermare personalmente l'invio.</span>
+            <button class="btn btn-light" type="submit">Richiedi una visita su WhatsApp <span aria-hidden="true">↗</span></button>
+            <span class="form-note">WhatsApp si aprirà con un messaggio precompilato, che potrete rivedere prima di inviarlo.</span>
           </div>
         </form>
       </div>
@@ -455,8 +536,8 @@
     <div class="container">
       <div class="footer-main">
         <div class="footer-brand">
-          <a class="brand" href="#inizio" aria-label="Resort Belvì, torna all'inizio"><span class="brand-top">Resort</span><span class="brand-name">BELV<i>Ì</i></span></a>
-          <p>Un luogo in cui la bellezza della natura incontra l'emozione di stare insieme.</p>
+          <a class="brand" href="#inizio" aria-label="Resort Belvì, torna all'inizio"><span class="brand-top">Resort</span><span class="brand-name">BEL<span class="brand-accent">VÌ</span></span></a>
+          <p>Nel Parco Nazionale del Vesuvio, un luogo riservato all’arte dell’accoglienza e delle celebrazioni su misura.</p>
         </div>
         <div>
           <h4>Esplora</h4>
@@ -472,7 +553,7 @@
   </footer>
 
   <div class="mobile-cta" id="mobileCta" aria-label="Contatti rapidi">
-    <a href="#contatti">Richiedi info</a>
+    <a href="#contatti">Prenota una visita</a>
     <a href="https://wa.me/393773650242" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
   </div>
 
@@ -548,7 +629,7 @@
         var date=val("eventDate");
         if(date){var bits=date.split("-");date=bits[2]+"/"+bits[1]+"/"+bits[0];}
         var lines=[
-          "Buongiorno Resort Belvì, vorrei ricevere informazioni per un evento.",
+          "Buongiorno Resort Belvì, desidererei ricevere informazioni e valutare una visita privata alla vostra location.",
           "",
           "Nome: "+val("name"),
           "Telefono: "+val("phone"),
