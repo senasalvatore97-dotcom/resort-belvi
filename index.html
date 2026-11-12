@@ -821,6 +821,29 @@
     .cuisine-visual-detail .cuisine-live-caption{padding:44px 15px 15px}
     .cuisine-visual-detail .cuisine-live-caption strong{font-size:23px}
     @media(max-width:760px){.cuisine-live-caption{padding:50px 15px 15px}.cuisine-live-caption strong{font-size:25px}.cuisine-visual-detail .cuisine-live-caption strong{font-size:19px}}
+
+    /* Resort Belvì footer: consistent minimal SVG iconography and agency credit. */
+    .site-footer .footer-social{display:flex;align-items:flex-start;justify-content:flex-end;flex-wrap:wrap;gap:12px 24px}
+    .site-footer .footer-social a{display:inline-flex;align-items:center;gap:10px;font-size:11px;line-height:1.4;letter-spacing:.045em;color:#e5ece3;transition:color .25s ease,transform .25s ease}
+    .site-footer .footer-social a:hover{color:#c7d7b8;transform:translateY(-2px)}
+    .site-footer .social-icon{display:block;flex:none;width:19px;height:19px}
+    .site-footer .social-icon-tiktok{width:18px;height:18px}
+    .site-footer .footer-bottom{display:flex;flex-wrap:wrap;align-items:baseline;gap:9px 30px}
+    .site-footer .footer-credit{margin-left:auto;color:#9eae9f;white-space:nowrap}
+    .site-footer .footer-credit a{color:#e8ede3;text-decoration:none;border-bottom:1px solid rgba(232,237,227,.45);padding-bottom:2px;transition:border-color .2s,color .2s}
+    .site-footer .footer-credit a:hover{color:white;border-color:white}
+    @media(max-width:950px){
+      .site-footer .footer-grid{flex-wrap:wrap;gap:26px 34px}
+      .site-footer .footer-social{justify-content:flex-start}
+      .site-footer .footer-credit{margin-left:0}
+    }
+    @media(max-width:760px){
+      .site-footer .footer-social{gap:17px 22px;justify-content:flex-start}
+      .site-footer .footer-social a{font-size:11px}
+      .site-footer .footer-bottom{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+      .site-footer .footer-bottom span{margin-top:0}
+      .site-footer .footer-credit{margin-top:9px!important}
+    }
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"EventVenue","name":"Resort Belvì","description":"Location per matrimoni e ricevimenti esclusivi nel contesto del Parco Nazionale del Vesuvio.","address":{"@type":"PostalAddress","streetAddress":"II Traversa Bosco, 15","addressLocality":"Somma Vesuviana","postalCode":"80049","addressRegion":"NA","addressCountry":"IT"},"telephone":"+39 377 365 0242","sameAs":["https://www.instagram.com/resortbelvi/"]}
@@ -1040,12 +1063,26 @@
           <span>II Traversa Bosco, 15 · 80049 Somma Vesuviana (NA)</span>
           <a href="tel:+393773650242">+39 377 365 0242</a>
         </div>
-        <div class="footer-social">
-          <a href="https://www.instagram.com/resortbelvi/" target="_blank" rel="noopener noreferrer">Instagram <svg class="arrow-icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></a>
-          <a href="https://www.google.com/maps/search/?api=1&query=Resort+Belv%C3%AC+Somma+Vesuviana" target="_blank" rel="noopener noreferrer">Dove siamo <svg class="arrow-icon" aria-hidden="true"><use href="#arrow-up-right"/></svg></a>
-        </div>
+        <nav class="footer-social" aria-label="Social e indicazioni">
+          <a href="https://www.instagram.com/resortbelvi/" target="_blank" rel="noopener noreferrer" aria-label="Resort Belvì su Instagram">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.3"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.65" cy="6.55" r="1" fill="currentColor" stroke="none"/></svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Resort+Belv%C3%AC+Somma+Vesuviana" target="_blank" rel="noopener noreferrer" aria-label="Dove siamo: Resort Belvì, Somma Vesuviana, Google Maps">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5.2-8 12-8 12S4 15.2 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.7"/></svg>
+            <span>Dove siamo</span>
+          </a>
+          <a href="https://www.tiktok.com/search?q=resortbelvi" target="_blank" rel="noopener noreferrer" aria-label="Cerca Resort Belvì su TikTok">
+            <svg class="social-icon social-icon-tiktok" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 2c.23 2.24 1.68 3.77 4.05 3.92v3.05a8.6 8.6 0 0 1-4.04-1.08v6.19a6.36 6.36 0 1 1-6.32-6.31c.32 0 .66.03.98.08v3.13a3.23 3.23 0 1 0 2.2 3.06V2h3.13Z"/></svg>
+            <span>TikTok</span>
+          </a>
+        </nav>
       </div>
-      <div class="footer-bottom"><span>© <span id="year"></span> Resort Belvì · Tutti i diritti riservati.</span><span>Matrimoni ed eventi nel Parco Nazionale del Vesuvio.</span></div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Resort Belvì · Tutti i diritti riservati.</span>
+        <span>Matrimoni ed eventi nel Parco Nazionale del Vesuvio.</span>
+        <span class="footer-credit">Powered by <a href="https://www.tanacommunication.it/" target="_blank" rel="noopener noreferrer" aria-label="Tana Communication, sito ufficiale">tanacommunication</a></span>
+      </div>
     </div>
   </footer>
 
