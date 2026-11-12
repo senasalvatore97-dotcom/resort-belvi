@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#20392e">
+  <meta name="description" content="Resort Belvì, a Somma Vesuviana: un luogo immerso nella natura per matrimoni, cerimonie ed eventi speciali. Scopri gli spazi e richiedi una visita privata.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:title" content="Resort Belvì | Il luogo dei momenti indimenticabili">
+  <meta property="og:description" content="Natura, architettura e bellezza. Scopri Resort Belvì a Somma Vesuviana, alle pendici del Vesuvio.">
+  <meta property="og:image" content="https://cdn0.matrimonio.com/vendor/0497/3_2/1920/jpg/img-3752_2_230497-1562922747.jpeg">
+  <title>Resort Belvì — Eventi, matrimoni e cerimonie a Somma Vesuviana</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--green:#20392e;--deep:#17271f;--moss:#5f705d;--ivory:#f7f5f0;--cream:#eeece5;--line:#d9dcd4;--text:#29392e;--white:#fff;--gold:#a68f68;--serif:"Cormorant Garamond",Georgia,serif;--sans:"DM Sans",Arial,sans-serif}
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{margin:0;background:var(--ivory);color:var(--text);font:400 15px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+    body.menu-open,body.lightbox-open{overflow:hidden}
+    img{max-width:100%;display:block}
+    button,input,select,textarea{font:inherit}
+    button,a{-webkit-tap-highlight-color:transparent}
+    a{color:inherit;text-decoration:none}
+    button{cursor:pointer}
+    :focus-visible{outline:2px solid var(--gold);outline-offset:5px}
+    ::selection{color:#fff;background:#6b806e}
+    .container{width:min(100% - 10vw,1320px);margin-inline:auto}
+    .eyebrow{display:inline-flex;align-items:center;gap:13px;text-transform:uppercase;letter-spacing:.23em;font-size:10px;font-weight:700;line-height:1.5}
+    .eyebrow:before{content:"";width:26px;height:1px;background:currentColor;opacity:.65}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{font-weight:400}
+    h2{font:400 clamp(46px,6.2vw,91px)/.99 var(--serif);letter-spacing:-.037em}
+    h2 em,h1 em{font-weight:400}
+    .muted{color:#667266}
+    .small{font-size:13px;line-height:1.85}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:25px;min-height:51px;padding:0 25px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;border:1px solid transparent;transition:background .3s,color .3s,border .3s,transform .3s;white-space:nowrap}
+    .btn:hover{transform:translateY(-2px)}
+    .btn svg{width:15px;height:15px;transition:transform .3s}
+    .btn:hover svg{transform:translate(3px,-2px)}
+    .btn-light{background:var(--ivory);color:var(--deep)}
+    .btn-light:hover{background:#fff}
+    .btn-outline-light{border-color:rgba(255,255,255,.55);color:#fff;background:transparent}
+    .btn-outline-light:hover{background:rgba(255,255,255,.12)}
+    .btn-dark{background:var(--green);color:#fff}
+    .btn-dark:hover{background:#355746}
+    .text-link{display:inline-flex;align-items:center;gap:20px;text-transform:uppercase;letter-spacing:.18em;font-size:10px;font-weight:700;padding-bottom:8px;border-bottom:1px solid currentColor;transition:gap .3s}
+    .text-link:hover{gap:28px}
+    .text-link span{font-size:17px;font-weight:400}
+    /* Brand is a typographic placeholder until the original vector logo is supplied. */
+    .brand{display:inline-flex;flex-direction:column;align-items:center;line-height:.86;flex-shrink:0}
+    .brand .brand-top{font:500 11px/1 var(--serif);letter-spacing:.4em;margin:0 0 7px 6px;text-transform:uppercase}
+    .brand .brand-name{font:500 34px/.85 var(--serif);letter-spacing:-.04em}
+    .brand .brand-name i{font-style:normal;color:#b3c2a4}
+    .nav{position:fixed;z-index:70;top:0;left:0;right:0;height:91px;color:white;border-bottom:1px solid rgba(255,255,255,.28);transition:height .35s,background .35s,color .35s,border .35s,box-shadow .35s}
+    .nav.scrolled,.nav.menu-active{height:77px;color:var(--green);background:rgba(249,248,243,.97);border-bottom-color:rgba(32,57,46,.12);box-shadow:0 10px 35px rgba(15,31,23,.07);backdrop-filter:blur(18px)}
+    .nav-inner{width:min(100% - 7vw,1440px);height:100%;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:35px}
+    .nav-links{display:flex;align-items:center;gap:clamp(18px,2.5vw,44px)}
+    .nav-link{font-size:10px;letter-spacing:.18em;font-weight:700;text-transform:uppercase;transition:opacity .2s}
+    .nav-link:hover{opacity:.65}
+    .nav .nav-cta{border:1px solid currentColor;padding:12px 19px;font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:700}
+    .nav .nav-cta:hover{background:var(--green);color:white;border-color:var(--green)}
+    .menu-toggle{display:none;align-items:center;justify-content:center;width:45px;height:45px;border:1px solid currentColor;background:transparent;color:inherit}
+    .menu-toggle span,.menu-toggle span:after{display:block;width:19px;height:1px;background:currentColor;content:"";transition:transform .2s}
+    .menu-toggle span:after{transform:translateY(6px)}
+    .nav.menu-active .menu-toggle span{transform:translateY(3px) rotate(45deg)}
+    .nav.menu-active .menu-toggle span:after{transform:rotate(-90deg)}
+    .mobile-menu{display:none}
+    .hero{position:relative;min-height:760px;height:min(900px,100svh);color:white;background:#23382f;overflow:hidden;display:flex;align-items:end}
+    .hero-photo,.hero-shade{position:absolute;inset:0}
+    .hero-photo{background-image:url("https://cdn0.matrimonio.com/vendor/0497/3_2/1920/jpg/img-3752_2_230497-1562922747.jpeg");background-size:cover;background-position:center 49%;transform:scale(1.05);animation:heroReveal 1.7s cubic-bezier(.2,.75,.2,1) both}
+    .hero-shade{background:linear-gradient(90deg,rgba(11,31,24,.70) 0%,rgba(17,38,29,.23) 70%),linear-gradient(0deg,rgba(10,31,21,.70) 0%,transparent 52%)}
+    .hero-content{position:relative;z-index:2;width:100%;padding-top:145px;padding-bottom:clamp(75px,10vh,130px)}
+    .hero .eyebrow{color:#e2e4d9}
+    .hero h1{font:400 clamp(77px,11.5vw,175px)/.81 var(--serif);letter-spacing:-.055em;max-width:1000px;margin:25px 0 27px}
+    .hero h1 em{display:block;font-style:italic;padding-left:clamp(0px,11vw,154px)}
+    .hero-bottom{display:flex;align-items:end;justify-content:space-between;gap:30px}
+    .hero-subtitle{max-width:400px;font-size:15px;font-weight:400;line-height:1.8;color:#e8ece5}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-side{position:absolute;z-index:2;right:3.4vw;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;text-transform:uppercase;letter-spacing:.27em;font-size:10px;font-weight:600;color:#f1f1eb}
+    .hero-scroll{position:absolute;bottom:24px;left:5%;display:flex;align-items:center;gap:14px;text-transform:uppercase;font-size:9px;letter-spacing:.2em;opacity:.8}
+    .hero-scroll:after{content:"";width:80px;height:1px;background:#fff;opacity:.55}
+    @keyframes heroReveal{from{transform:scale(1.13);filter:brightness(.75)}to{transform:scale(1.05);filter:brightness(1)}}
+    .intro{padding:155px 0 145px;overflow:hidden}
+    .intro-grid{display:grid;grid-template-columns:1fr 1.05fr;align-items:center;gap:9vw}
+    .intro-media{position:relative;padding:0 15% 11% 0}
+    .intro-media .photo-main{aspect-ratio:.79;object-fit:cover;width:100%;filter:saturate(.85)}
+    .intro-media .photo-small{position:absolute;right:0;bottom:0;width:43%;aspect-ratio:.83;object-fit:cover;border:9px solid var(--ivory)}
+    .intro-copy{padding:20px 0}
+    .intro-copy h2{margin:25px 0 25px}
+    .intro-copy>p{max-width:470px;color:#57675a;font-size:15px;line-height:2}
+    .intro-copy .text-link{margin-top:24px}
+    .signature{margin-top:48px;color:var(--gold);font:italic 32px/1 var(--serif)}
+    .marquee{overflow:hidden;padding:21px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .marquee-line{white-space:nowrap;display:flex;justify-content:space-around;gap:55px;color:#849083;letter-spacing:.25em;text-transform:uppercase;font-size:10px}
+    .marquee-line b{font-weight:400;color:var(--gold)}
+    .spaces{padding:135px 0 130px;background:var(--cream)}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:59px}
+    .section-head h2{margin:20px 0 0;max-width:750px}
+    .section-head p{max-width:310px;font-size:13px;color:#647168;margin-bottom:4px}
+    .spaces-grid{display:grid;grid-template-columns:1.2fr .95fr .95fr;gap:19px;align-items:stretch}
+    .space-card{position:relative;min-height:550px;color:#fff;overflow:hidden;background:#20392e}
+    .space-card img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:saturate(.83);transition:transform .75s cubic-bezier(.2,.7,.2,1)}
+    .space-card:hover img{transform:scale(1.055)}
+    .space-card:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,26,18,.75),transparent 54%)}
+    .space-card-content{position:absolute;z-index:2;left:28px;right:25px;bottom:30px}
+    .space-card .count{font-size:10px;letter-spacing:.2em;opacity:.8}
+    .space-card h3{font:400 45px/1 var(--serif);margin:13px 0 5px}
+    .space-card p{font-size:12px;line-height:1.7;color:#e8ece6;margin-bottom:0;max-width:270px}
+    .spaces-note{display:flex;justify-content:space-between;gap:30px;margin-top:30px;align-items:center}
+    .spaces-note p{margin:0;color:#617063;font-size:12px}
+    .experience{display:grid;grid-template-columns:1fr 1fr;min-height:730px;background:var(--green);color:#fff}
+    .experience-visual{min-height:640px;position:relative;overflow:hidden}
+    .experience-visual img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center}
+    .experience-copy{display:flex;flex-direction:column;justify-content:center;padding:95px clamp(35px,8vw,145px)}
+    .experience-copy .eyebrow{color:#b6c9ba}
+    .experience-copy h2{margin:25px 0}
+    .experience-copy p{max-width:490px;color:#d3ddd2;font-size:14px;line-height:2}
+    .experience-points{display:grid;grid-template-columns:1fr 1fr;gap:38px;margin:35px 0 37px}
+    .experience-points div{padding-top:19px;border-top:1px solid rgba(255,255,255,.28)}
+    .experience-points b{display:block;font:400 35px/1.1 var(--serif);margin-bottom:11px}
+    .experience-points span{display:block;color:#cdd9cb;font-size:11px;line-height:1.8}
+    .events{padding:145px 0}
+    .events .section-head{margin-bottom:57px}
+    .event-list{border-top:1px solid #cbd2c8}
+    .event-row{display:grid;grid-template-columns:70px 1fr 1fr 45px;align-items:center;gap:20px;border-bottom:1px solid #cbd2c8;padding:35px 5px;transition:padding .25s,color .25s,background .25s}
+    .event-row:hover{padding-left:18px;padding-right:18px;background:#eeefe8}
+    .event-row .num{color:#829183;font-size:12px;letter-spacing:.1em}
+    .event-row h3{font:400 clamp(31px,3.1vw,53px)/1 var(--serif);margin:0}
+    .event-row p{max-width:335px;margin:0;font-size:12px;color:#667469;line-height:1.9}
+    .event-row .arrow{font-size:31px;font-family:var(--serif);justify-self:end;font-weight:400}
+    .gallery{padding:120px 0;background:#e7e9e1}
+    .gallery-head{text-align:center;max-width:600px;margin:0 auto 55px}
+    .gallery-head .eyebrow:before{display:none}
+    .gallery-head h2{margin:20px 0}
+    .gallery-head p{font-size:13px;color:#637064}
+    .gallery-grid{display:grid;grid-template-columns:1.15fr .85fr .85fr;grid-template-rows:300px 300px;gap:15px}
+    .gallery-item{display:block;position:relative;padding:0;border:0;background:#20392e;overflow:hidden;text-align:left}
+    .gallery-item:first-child{grid-row:span 2}
+    .gallery-item img{height:100%;width:100%;object-fit:cover;transition:transform .7s;filter:saturate(.85)}
+    .gallery-item:hover img{transform:scale(1.05)}
+    .gallery-item:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.43),transparent 38%);opacity:.7}
+    .gallery-item .zoom{position:absolute;z-index:2;bottom:17px;right:18px;border:1px solid rgba(255,255,255,.75);border-radius:50%;color:white;width:38px;height:38px;display:grid;place-items:center;font-size:20px;transition:background .2s}
+    .gallery-item:hover .zoom{background:rgba(255,255,255,.2)}
+    .gallery-caption{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-top:30px;font-size:11px;color:#677769}
+    .gallery-caption a{font-weight:700;text-transform:uppercase;letter-spacing:.13em;color:var(--green);border-bottom:1px solid var(--green);padding-bottom:5px}
+    .quote{padding:150px 0;text-align:center;background:var(--ivory)}
+    .quote .quote-symbol{font:italic 105px/.6 var(--serif);color:#9caa96}
+    .quote blockquote{max-width:1000px;margin:26px auto 34px;font:400 clamp(40px,5.1vw,78px)/1.12 var(--serif);letter-spacing:-.025em}
+    .quote .eyebrow:before{display:none;color:#667667}
+    .contact{position:relative;overflow:hidden;background:var(--green);color:white}
+    .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:9%;padding:135px 0 140px}
+    .contact-copy h2{margin:24px 0 25px;font-size:clamp(55px,6.5vw,98px)}
+    .contact-copy p{max-width:360px;color:#cfdbd0;font-size:13px;line-height:2}
+    .contact-detail{margin-top:75px;display:grid;gap:27px}
+    .contact-detail small{display:block;text-transform:uppercase;font-size:9px;letter-spacing:.2em;color:#a7bba9;margin-bottom:8px}
+    .contact-detail a,.contact-detail span{display:block;font:400 23px/1.35 var(--serif)}
+    .contact-detail a:hover{text-decoration:underline;text-underline-offset:4px}
+    .contact-form{padding-top:12px}
+    .contact-form>p{font-size:13px;color:#cbd7cc;margin-bottom:29px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px 18px}
+    .field{display:flex;flex-direction:column;gap:11px}
+    .field.full{grid-column:1/-1}
+    .field label{font-size:10px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:#dbe3db}
+    .field input,.field select,.field textarea{width:100%;border:none;border-bottom:1px solid rgba(255,255,255,.38);border-radius:0;background:transparent;color:#fff;padding:11px 0 15px;outline:none;transition:border-color .2s;appearance:none}
+    .field input:focus,.field select:focus,.field textarea:focus{border-color:#fff}
+    .field input::placeholder,.field textarea::placeholder{color:#a7b8ab}
+    .field select option{background:var(--green);color:white}
+    .field textarea{resize:vertical;min-height:90px}
+    .field input[type=date]{color-scheme:dark}
+    .privacy{display:flex;align-items:flex-start;gap:12px;margin:28px 0 24px;font-size:11px;line-height:1.7;color:#c3d0c5;max-width:550px}
+    .privacy input{margin-top:4px;accent-color:#fff;flex-shrink:0;width:15px;height:15px}
+    .form-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+    .form-note{font-size:10px;color:#b7c8ba;line-height:1.7;max-width:285px}
+    .footer{background:var(--deep);color:#fff;padding:77px 0 23px}
+    .footer-main{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:45px;align-items:start;padding-bottom:75px}
+    .footer .brand{align-items:flex-start}
+    .footer .brand .brand-top{margin-left:5px}
+    .footer-brand p{margin-top:28px;color:#acbbaa;font-size:12px;max-width:250px}
+    .footer h4{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#a9bda7;margin:0 0 22px;font-weight:700}
+    .footer-links{display:grid;gap:13px;font-size:13px}
+    .footer-links a:hover{opacity:.7}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.18);padding-top:22px;font-size:10px;color:#a6b8a7}
+    .footer-bottom a{text-decoration:underline;text-underline-offset:3px}
+    .mobile-cta{display:none}
+    .lightbox{position:fixed;inset:0;z-index:150;background:rgba(10,18,13,.95);display:none;align-items:center;justify-content:center;padding:75px 5vw 40px}
+    .lightbox.active{display:flex}
+    .lightbox img{max-width:100%;max-height:100%;object-fit:contain}
+    .lightbox-close{position:absolute;right:30px;top:18px;border:0;background:transparent;color:#fff;font-size:39px;line-height:1}
+    .lightbox-info{position:absolute;bottom:14px;left:5vw;color:#bbc5ba;font-size:11px;letter-spacing:.08em}
+    [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
+    [data-reveal].visible{opacity:1;transform:translateY(0)}
+    @media(max-width:1080px){
+      .nav-links{gap:20px}.nav-link{font-size:9px}.nav .nav-cta{font-size:9px}
+      .intro-grid{gap:6vw}.spaces-grid{grid-template-columns:1fr 1fr}.space-card:first-child{grid-column:1/-1;min-height:390px}.space-card{min-height:450px}
+      .experience-copy{padding:65px 7vw}.experience-visual{min-height:600px}.event-row{grid-template-columns:45px 1fr 1fr 30px}
+    }
+    @media(max-width:760px){
+      html{scroll-padding-top:74px}
+      .container{width:calc(100% - 40px)}
+      .nav,.nav.scrolled,.nav.menu-active{height:73px}
+      .nav-inner{width:calc(100% - 36px)}
+      .nav-links{display:none}.menu-toggle{display:flex}
+      .brand .brand-top{font-size:8px;margin-bottom:6px}.brand .brand-name{font-size:29px}
+      .mobile-menu{position:fixed;top:73px;left:0;right:0;height:calc(100dvh - 73px);background:var(--ivory);color:var(--green);padding:50px 24px;display:flex;flex-direction:column;gap:26px;transform:translateX(102%);transition:transform .35s;pointer-events:none;overflow-y:auto}
+      .nav.menu-active .mobile-menu{transform:translateX(0);pointer-events:auto}
+      .mobile-menu a{font:400 45px/1 var(--serif);border-bottom:1px solid #d6ddd3;padding-bottom:14px}
+      .mobile-menu a:last-child{font:700 11px/1.3 var(--sans);letter-spacing:.15em;text-transform:uppercase;margin-top:20px;border:1px solid var(--green);padding:18px;text-align:center}
+      .hero{min-height:660px;height:94svh;max-height:870px}
+      .hero-photo{background-position:55% center}
+      .hero-shade{background:linear-gradient(0deg,rgba(10,31,21,.83) 0%,rgba(10,31,21,.17) 95%),linear-gradient(90deg,rgba(10,31,21,.35),transparent)}
+      .hero-content{padding-top:120px;padding-bottom:85px}
+      .hero h1{font-size:clamp(78px,16vw,125px);margin:22px 0 24px}
+      .hero h1 em{padding-left:15%}
+      .hero-bottom{display:block}.hero-subtitle{font-size:13px;max-width:310px;margin-bottom:28px}
+      .hero-actions{gap:9px}.hero-actions .btn{min-height:46px;padding:0 14px;font-size:9px;gap:12px}
+      .hero-side{display:none}.hero-scroll{left:20px;bottom:20px}
+      .intro{padding:90px 0 100px}.intro-grid{grid-template-columns:1fr;gap:56px}.intro-media{padding-right:15%;padding-bottom:9%}
+      .intro-media .photo-main{aspect-ratio:.95}.intro-copy h2{font-size:clamp(52px,12vw,76px)}
+      .signature{margin-top:28px}
+      .marquee-line{gap:22px;font-size:8px;letter-spacing:.12em}
+      .spaces{padding:85px 0 86px}.section-head{display:block;margin-bottom:35px}.section-head h2{font-size:clamp(52px,12vw,78px)}.section-head p{margin-top:15px}
+      .spaces-grid{display:block}.space-card,.space-card:first-child{min-height:440px;margin-bottom:14px}.space-card:nth-child(2),.space-card:nth-child(3){min-height:380px}
+      .space-card h3{font-size:42px}.spaces-note{display:block}.spaces-note p{margin-bottom:20px}
+      .experience{display:flex;flex-direction:column}.experience-visual{height:450px;min-height:0}.experience-copy{padding:80px 22px 90px}
+      .experience-copy h2{font-size:clamp(56px,11vw,83px)}.experience-points{gap:25px}
+      .events{padding:85px 0}.event-row{grid-template-columns:28px 1fr 22px;gap:13px;padding:24px 0}.event-row h3{font-size:38px}.event-row p{grid-column:2;grid-row:2;font-size:11px}.event-row .arrow{grid-column:3;grid-row:1}
+      .gallery{padding:86px 0}.gallery-head h2{font-size:61px}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:350px 195px 195px;gap:10px}.gallery-item:first-child{grid-column:1/-1;grid-row:auto}.gallery-item:nth-child(4){grid-column:1}.gallery-caption{align-items:start;flex-direction:column}
+      .quote{padding:100px 0}.quote blockquote{font-size:clamp(42px,10vw,70px)}
+      .contact-grid{grid-template-columns:1fr;gap:50px;padding:85px 0 95px}.contact-copy h2{font-size:clamp(57px,13vw,84px)}.contact-detail{margin-top:43px;grid-template-columns:1fr 1fr;gap:25px}.contact-detail>div:last-child{grid-column:1/-1}
+      .footer{padding:65px 0 23px}.footer-main{grid-template-columns:1fr 1fr;gap:45px 28px;padding-bottom:55px}.footer-brand{grid-column:1/-1}
+      .footer-bottom{gap:12px}
+      .mobile-cta{display:flex;position:fixed;z-index:65;bottom:0;left:0;right:0;background:var(--ivory);padding:10px 20px calc(10px + env(safe-area-inset-bottom));gap:10px;box-shadow:0 -10px 25px rgba(20,30,20,.1);transform:translateY(120%);transition:transform .35s}
+      .mobile-cta.show{transform:translateY(0)}.mobile-cta a{flex:1;text-align:center;font-size:10px;text-transform:uppercase;letter-spacing:.11em;font-weight:700;padding:12px 5px}
+      .mobile-cta a:first-child{background:var(--green);color:#fff}.mobile-cta a:last-child{border:1px solid var(--green);color:var(--green)}
+      .footer{padding-bottom:90px}
+    }
+    @media(max-width:420px){
+      .hero h1{font-size:74px}.hero h1 em{padding-left:11%}
+      .form-grid{grid-template-columns:1fr}.field.full{grid-column:1}
+      .contact-detail{grid-template-columns:1fr}.contact-detail>div:last-child{grid-column:auto}
+      .experience-points{grid-template-columns:1fr}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition-duration:.01ms!important}
+      [data-reveal]{opacity:1;transform:none}
+    }
+  </style>
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"EventVenue","name":"Resort Belvì","description":"Location per matrimoni, cerimonie e ricevimenti immersa nel verde a Somma Vesuviana.","address":{"@type":"PostalAddress","streetAddress":"II Traversa Bosco, 15","addressLocality":"Somma Vesuviana","addressRegion":"NA","postalCode":"80049","addressCountry":"IT"},"telephone":"+39 377 365 0242","sameAs":["https://www.instagram.com/resortbelvi/"]}
+  </script>
+</head>
+<body>
+  <header class="nav" id="siteNav">
+    <div class="nav-inner">
+      <a class="brand" href="#inizio" aria-label="Resort Belvì, torna all'inizio">
+        <span class="brand-top">Resort</span><span class="brand-name">BELV<i>Ì</i></span>
+      </a>
+      <nav class="nav-links" aria-label="Navigazione principale">
+        <a class="nav-link" href="#filosofia">Il resort</a>
+        <a class="nav-link" href="#spazi">Gli spazi</a>
+        <a class="nav-link" href="#eventi">Eventi</a>
+        <a class="nav-link" href="#gallery">Gallery</a>
+        <a class="nav-cta" href="#contatti">Richiedi informazioni ↗</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Apri menu" aria-controls="mobileMenu" aria-expanded="false"><span></span></button>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Navigazione mobile">
+      <a href="#filosofia">Il resort</a><a href="#spazi">Gli spazi</a><a href="#eventi">Eventi</a><a href="#gallery">Gallery</a><a href="#contatti">Richiedi informazioni ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inizio" aria-label="Benvenuti a Resort Belvì">
+      <div class="hero-photo" role="img" aria-label="La piscina e gli spazi esterni di Resort Belvì"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-side">Somma Vesuviana · Napoli · Italia</div>
+      <div class="container hero-content">
+        <span class="eyebrow">A place beyond the ordinary</span>
+        <h1>Momenti<br><em>senza tempo.</em></h1>
+        <div class="hero-bottom">
+          <div>
+            <p class="hero-subtitle">Tra natura e architettura, il luogo in cui le emozioni più belle prendono forma.</p>
+            <div class="hero-actions">
+              <a class="btn btn-light" href="#spazi">Esplora il resort <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 19 19 5M7 5h12v12"/></svg></a>
+              <a class="btn btn-outline-light" href="#contatti">Organizza il tuo evento</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="hero-scroll" href="#filosofia">Scorri per scoprire</a>
+    </section>
+
+    <section class="intro" id="filosofia">
+      <div class="container intro-grid">
+        <div class="intro-media" data-reveal>
+          <img class="photo-main" src="https://cdn0.matrimonio.com/tour3d/7062/3_2/960/jpg/7062_230497_2023-06-01-17-34-34.jpeg" alt="Viale nel giardino e spazi verdi di Resort Belvì" loading="lazy">
+          <img class="photo-small" src="https://cdn0.matrimonio.com/vendor/0497/3_2/960/jpg/photo-2021-10-11-14-02-49-2_2_230497-163403900887330.jpeg" alt="Allestimento floreale per una cerimonia nel giardino" loading="lazy">
+        </div>
+        <div class="intro-copy" data-reveal>
+          <span class="eyebrow">Benvenuti al Belvì</span>
+          <h2>Un mondo a parte,<br><em>tutto da vivere.</em></h2>
+          <p>C'è un luogo, alle pendici del Vesuvio, dove il verde incontra linee contemporanee, l'acqua riflette la luce e ogni dettaglio invita a fermarsi.</p>
+          <p>Resort Belvì nasce per dare spazio alle storie più importanti. Un rifugio elegante e sorprendente, pensato per trasformare ogni celebrazione in un ricordo da custodire.</p>
+          <a class="text-link" href="#eventi">La tua occasione speciale <span aria-hidden="true">↗</span></a>
+          <div class="signature">With love, Belvì</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="container marquee-line">
+        <span>Nature & beauty</span><b>✦</b><span>Exclusive experiences</span><b>✦</b><span>Made to remember</span><b>✦</b><span>Resort Belvì</span>
+      </div>
+    </div>
+
+    <section class="spaces" id="spazi">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div><span class="eyebrow">La bellezza negli spazi</span><h2>Scenari da <em>ricordare.</em></h2></div>
+          <p>Ambienti diversi, un'unica atmosfera. Ogni spazio racconta un modo nuovo di vivere il tuo evento.</p>
+        </div>
+        <div class="spaces-grid">
+          <article class="space-card" data-reveal>
+            <img src="https://cdn0.matrimonio.com/vendor/0497/3_2/1920/jpg/img-3752_2_230497-1562922747.jpeg" alt="Piscina e architettura contemporanea del Resort Belvì" loading="lazy">
+            <div class="space-card-content"><span class="count">01 / L'acqua</span><h3>La piscina</h3><p>Il cuore scenografico del resort, tra riflessi, luce e atmosfere indimenticabili.</p></div>
+          </article>
+          <article class="space-card" data-reveal>
+            <img src="https://cdn0.matrimonio.com/tour3d/7062/3_2/960/jpg/7062_230497_2023-06-01-17-34-34.jpeg" alt="Giardino, vialetto e padiglioni per eventi" loading="lazy">
+            <div class="space-card-content"><span class="count">02 / La natura</span><h3>Il parco</h3><p>Spazi verdi che diventano scenografia per incontri ed emozioni.</p></div>
+          </article>
+          <article class="space-card" data-reveal>
+            <img src="https://cdn0.matrimonio.com/vendor/0497/3_2/960/jpg/photo-2021-10-11-14-02-49-2_2_230497-163403900887330.jpeg" alt="Allestimento in giardino per una cerimonia" loading="lazy">
+            <div class="space-card-content"><span class="count">03 / Le emozioni</span><h3>Le cerimonie</h3><p>Angoli raccolti e allestimenti su misura per dire sì alla bellezza.</p></div>
+          </article>
+        </div>
+        <div class="spaces-note" data-reveal>
+          <p>La struttura comprende anche una sala ricevimenti vetrata, affacciata sugli spazi esterni.</p>
+          <a class="text-link" href="#gallery">Guarda la gallery <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience" aria-labelledby="experienceTitle">
+      <div class="experience-visual">
+        <img src="https://cdn0.matrimonio.com/vendor/0497/3_2/1920/jpg/img-20190918-wa0061_2_230497-1568896932.jpeg" alt="Un momento speciale con sposi e giochi di luce sulla piscina" loading="lazy">
+      </div>
+      <div class="experience-copy" data-reveal>
+        <span class="eyebrow">L'esperienza Belvì</span>
+        <h2 id="experienceTitle">Tutto parla<br><em>di voi.</em></h2>
+        <p>Crediamo che gli eventi più belli siano quelli che somigliano a chi li vive. Per questo ogni progetto inizia dall'ascolto, dai vostri desideri e da tutti quei particolari che fanno la differenza.</p>
+        <div class="experience-points">
+          <div><b>Unico.</b><span>Un solo evento al giorno per dedicare l'attenzione che merita.</span></div>
+          <div><b>Su misura.</b><span>Allestimenti, organizzazione e proposte gastronomiche personalizzabili.</span></div>
+        </div>
+        <a class="btn btn-outline-light" href="#contatti">Raccontaci il tuo evento <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="events" id="eventi">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div><span class="eyebrow">Le occasioni speciali</span><h2>Ogni storia merita<br><em>il suo scenario.</em></h2></div>
+          <p>Dal giorno delle nozze alle celebrazioni più intime, c'è sempre una ragione per creare qualcosa di straordinario.</p>
+        </div>
+        <div class="event-list">
+          <a class="event-row" href="#contatti" data-event="Matrimonio">
+            <span class="num">01</span><h3>Matrimoni</h3><p>Un giorno irripetibile, dal rito al ricevimento, tra natura, emozione ed eleganza.</p><span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="event-row" href="#contatti" data-event="Cerimonia">
+            <span class="num">02</span><h3>Cerimonie</h3><p>Momenti da condividere con le persone più care, in una cornice speciale.</p><span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="event-row" href="#contatti" data-event="Festa privata">
+            <span class="num">03</span><h3>Eventi privati</h3><p>Compleanni, anniversari e ricorrenze da celebrare in modo personale.</p><span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <div class="gallery-head" data-reveal>
+          <span class="eyebrow">A glimpse of Belvì</span>
+          <h2>La magia <em>in immagini.</em></h2>
+          <p>Un racconto per immagini di luoghi, dettagli e momenti che restano.</p>
+        </div>
+        <div class="gallery-grid">
+          <button class="gallery-item" type="button" data-caption="Il cuore del resort" aria-label="Ingrandisci foto della piscina">
+            <img src="https://cdn0.matrimonio.com/vendor/0497/3_2/1920/jpg/img-3752_2_230497-1562922747.jpeg" alt="Piscina di Resort Belvì" loading="lazy"><span class="zoom" aria-hidden="true">+</span>
+          </button>
+          <button class="gallery-item" type="button" data-caption="Il giardino" aria-label="Ingrandisci foto del giardino">
+            <img src="https://cdn0.matrimonio.com/tour3d/7062/3_2/960/jpg/7062_230497_2023-06-01-17-34-34.jpeg" alt="Giardino di Resort Belvì" loading="lazy"><span class="zoom" aria-hidden="true">+</span>
+          </button>
+          <button class="gallery-item" type="button" data-caption="Cerimonie nella natura" aria-label="Ingrandisci foto della cerimonia">
+            <img src="https://cdn0.matrimonio.com/vendor/0497/3_2/960/jpg/photo-2021-10-11-14-02-49-2_2_230497-163403900887330.jpeg" alt="Cerimonia nel verde" loading="lazy"><span class="zoom" aria-hidden="true">+</span>
+          </button>
+          <button class="gallery-item" type="button" data-caption="Momenti da ricordare" aria-label="Ingrandisci foto di un matrimonio">
+            <img src="https://cdn0.matrimonio.com/vendor/0497/3_2/1920/jpg/img-20190918-wa0061_2_230497-1568896932.jpeg" alt="Taglio della torta sullo specchio d'acqua" loading="lazy"><span class="zoom" aria-hidden="true">+</span>
+          </button>
+          <button class="gallery-item" type="button" data-caption="La festa continua" aria-label="Ingrandisci foto di una festa serale">
+            <img src="https://cdn0.matrimonio.com/vendor/0497/3_2/1920/jpg/belvi5_2_230497-1561658664.jpeg" alt="Ricevimento serale con fuochi d'artificio" loading="lazy"><span class="zoom" aria-hidden="true">+</span>
+          </button>
+        </div>
+        <div class="gallery-caption">
+          <span>Una selezione di fotografie pubbliche della struttura. Tutti i diritti restano ai rispettivi autori.</span>
+          <a href="https://www.instagram.com/resortbelvi/" target="_blank" rel="noopener noreferrer">Seguici su Instagram ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote">
+      <div class="container" data-reveal>
+        <div class="quote-symbol" aria-hidden="true">“</div>
+        <blockquote>Ci sono giorni che passano.<br>E poi ci sono giorni che <em>restano.</em></blockquote>
+        <span class="eyebrow">Resort Belvì · Moments to remember</span>
+      </div>
+    </section>
+
+    <section class="contact" id="contatti">
+      <div class="container contact-grid">
+        <div class="contact-copy" data-reveal>
+          <span class="eyebrow">Il tuo giorno comincia qui</span>
+          <h2>Immaginiamolo<br><em>insieme.</em></h2>
+          <p>Raccontaci cosa desideri. Ti aspettiamo per scoprire gli spazi di Resort Belvì e iniziare a dare forma a un evento tutto tuo.</p>
+          <div class="contact-detail">
+            <div><small>Chiamaci</small><a href="tel:+393773650242">+39 377 365 0242</a></div>
+            <div><small>Scrivici</small><a href="https://wa.me/393773650242" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></div>
+            <div><small>Vieni a trovarci</small><a href="https://www.google.com/maps/search/?api=1&query=Resort+Belv%C3%AC+II+Traversa+Bosco+15+Somma+Vesuviana" target="_blank" rel="noopener noreferrer">II Traversa Bosco, 15<br>80049 Somma Vesuviana (NA) ↗</a></div>
+          </div>
+        </div>
+        <form class="contact-form" id="inquiryForm" data-reveal>
+          <span class="eyebrow">Richiedi informazioni</span>
+          <p>Compila i campi: prepareremo un messaggio WhatsApp con i dettagli della tua richiesta. Nessun invio automatico.</p>
+          <div class="form-grid">
+            <div class="field"><label for="name">Il tuo nome *</label><input id="name" name="name" autocomplete="name" placeholder="Come ti chiami?" required maxlength="100"></div>
+            <div class="field"><label for="phone">Il tuo numero *</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+39 ..." required maxlength="40"></div>
+            <div class="field"><label for="eventType">Tipo di evento *</label><select id="eventType" name="eventType" required><option value="" disabled selected>Seleziona l'occasione</option><option>Matrimonio</option><option>Cerimonia</option><option>Festa privata</option><option>Altro evento</option></select></div>
+            <div class="field"><label for="eventDate">Data indicativa</label><input id="eventDate" name="eventDate" type="date"></div>
+            <div class="field full"><label for="guests">Numero indicativo di invitati</label><select id="guests" name="guests"><option value="">Non ancora definito</option><option>Fino a 60</option><option>60 – 100</option><option>100 – 150</option><option>150 – 180</option><option>Più di 180 (da verificare)</option></select></div>
+            <div class="field full"><label for="message">Il tuo messaggio</label><textarea id="message" name="message" maxlength="900" placeholder="Raccontaci qualche dettaglio del tuo evento..."></textarea></div>
+          </div>
+          <label class="privacy"><input type="checkbox" id="consent" required><span>Acconsento a condividere le informazioni inserite con Resort Belvì tramite WhatsApp, dopo aver verificato il messaggio nell'app. I dati non vengono salvati da questo sito.</span></label>
+          <div class="form-actions">
+            <button class="btn btn-light" type="submit">Invia richiesta su WhatsApp <span aria-hidden="true">↗</span></button>
+            <span class="form-note">Si aprirà WhatsApp con un testo precompilato. Dovrai confermare personalmente l'invio.</span>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="brand" href="#inizio" aria-label="Resort Belvì, torna all'inizio"><span class="brand-top">Resort</span><span class="brand-name">BELV<i>Ì</i></span></a>
+          <p>Un luogo in cui la bellezza della natura incontra l'emozione di stare insieme.</p>
+        </div>
+        <div>
+          <h4>Esplora</h4>
+          <div class="footer-links"><a href="#filosofia">Il resort</a><a href="#spazi">Gli spazi</a><a href="#eventi">Gli eventi</a><a href="#gallery">Gallery</a><a href="#contatti">Contatti</a></div>
+        </div>
+        <div>
+          <h4>Restiamo in contatto</h4>
+          <div class="footer-links"><a href="tel:+393773650242">+39 377 365 0242</a><a href="https://www.instagram.com/resortbelvi/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://wa.me/393773650242" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a><a href="https://www.google.com/maps/search/?api=1&query=Resort+Belv%C3%AC+Somma+Vesuviana" target="_blank" rel="noopener noreferrer">Indicazioni stradali ↗</a></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year"></span> Resort Belvì. Tutti i diritti riservati.</span><span>II Traversa Bosco, 15 · Somma Vesuviana (NA)</span><a href="#inizio">Torna su ↑</a></div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta" id="mobileCta" aria-label="Contatti rapidi">
+    <a href="#contatti">Richiedi info</a>
+    <a href="https://wa.me/393773650242" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+  </div>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Fotografia ingrandita" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Chiudi fotografia">×</button>
+    <img id="lightboxImage" alt="">
+    <span class="lightbox-info" id="lightboxCaption"></span>
+  </div>
+
+  <script>
+    (function(){
+      var nav=document.getElementById("siteNav");
+      var toggle=document.getElementById("menuToggle");
+      var mobileCta=document.getElementById("mobileCta");
+      var lightbox=document.getElementById("lightbox");
+      var closeLightbox=document.getElementById("lightboxClose");
+      var lastFocus=null;
+      function updateNav(){
+        var scrolled=window.scrollY>35;
+        nav.classList.toggle("scrolled",scrolled);
+        mobileCta.classList.toggle("show",window.innerWidth<=760&&window.scrollY>480&&!nav.classList.contains("menu-active"));
+      }
+      window.addEventListener("scroll",updateNav,{passive:true});
+      window.addEventListener("resize",updateNav);
+      updateNav();
+      function setMenu(open){
+        nav.classList.toggle("menu-active",open);
+        document.body.classList.toggle("menu-open",open);
+        toggle.setAttribute("aria-expanded",String(open));
+        toggle.setAttribute("aria-label",open?"Chiudi menu":"Apri menu");
+        updateNav();
+      }
+      toggle.addEventListener("click",function(){setMenu(!nav.classList.contains("menu-active"));});
+      document.querySelectorAll(".mobile-menu a").forEach(function(a){a.addEventListener("click",function(){setMenu(false);});});
+      document.querySelectorAll(".event-row").forEach(function(a){
+        a.addEventListener("click",function(){document.getElementById("eventType").value=a.getAttribute("data-event");});
+      });
+      if("IntersectionObserver" in window){
+        var observer=new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target);}});
+        },{threshold:.1,rootMargin:"0px 0px -20px 0px"});
+        document.querySelectorAll("[data-reveal]").forEach(function(el){observer.observe(el);});
+      } else {document.querySelectorAll("[data-reveal]").forEach(function(el){el.classList.add("visible");});}
+      document.querySelectorAll(".gallery-item").forEach(function(item){
+        item.addEventListener("click",function(){
+          var photo=item.querySelector("img");
+          lastFocus=document.activeElement;
+          document.getElementById("lightboxImage").src=photo.src;
+          document.getElementById("lightboxImage").alt=photo.alt;
+          document.getElementById("lightboxCaption").textContent=item.getAttribute("data-caption")||"Resort Belvì";
+          lightbox.classList.add("active");lightbox.setAttribute("aria-hidden","false");
+          document.body.classList.add("lightbox-open");closeLightbox.focus();
+        });
+      });
+      function hideLightbox(){
+        lightbox.classList.remove("active");lightbox.setAttribute("aria-hidden","true");
+        document.body.classList.remove("lightbox-open");
+        document.getElementById("lightboxImage").removeAttribute("src");
+        if(lastFocus)lastFocus.focus();
+      }
+      closeLightbox.addEventListener("click",hideLightbox);
+      lightbox.addEventListener("click",function(e){if(e.target===lightbox)hideLightbox();});
+      document.addEventListener("keydown",function(e){
+        if(e.key==="Escape"){if(lightbox.classList.contains("active"))hideLightbox();else if(nav.classList.contains("menu-active"))setMenu(false);}
+        if(e.key==="Tab"&&lightbox.classList.contains("active")){e.preventDefault();closeLightbox.focus();}
+      });
+      document.getElementById("year").textContent=new Date().getFullYear();
+      document.getElementById("inquiryForm").addEventListener("submit",function(e){
+        e.preventDefault();
+        if(!this.reportValidity())return;
+        var form=this;
+        var val=function(id){return document.getElementById(id).value.trim();};
+        var date=val("eventDate");
+        if(date){var bits=date.split("-");date=bits[2]+"/"+bits[1]+"/"+bits[0];}
+        var lines=[
+          "Buongiorno Resort Belvì, vorrei ricevere informazioni per un evento.",
+          "",
+          "Nome: "+val("name"),
+          "Telefono: "+val("phone"),
+          "Tipo di evento: "+val("eventType")
+        ];
+        if(date)lines.push("Data indicativa: "+date);
+        if(val("guests"))lines.push("Invitati: "+val("guests"));
+        if(val("message"))lines.push("Messaggio: "+val("message"));
+        lines.push("","Grazie!");
+        var url="https://wa.me/393773650242?text="+encodeURIComponent(lines.join("\n"));
+        var w=window.open(url,"_blank","noopener,noreferrer");
+        if(!w)window.location.href=url;
+      });
+    })();
+  </script>
+</body>
+</html>
